@@ -40,6 +40,18 @@ const routes = [
     name: 'person',
     component: () => import('../views/person.vue'),
   },
+  // 立即约课
+  {
+    path: '/oto',
+    name: 'oto',
+    component: () => import('../views/oto.vue'),
+  },
+  // 搜索
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('../views/search.vue'),
+  },
 ]
 
 const router = new VueRouter({

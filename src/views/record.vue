@@ -16,7 +16,7 @@
           <div class="zb_empty">
             <img src="" alt="" />
             <p>还没有待上课记录哦</p>
-            <van-button>立即约课</van-button>
+            <van-button @click="$router.push('/oto')">立即约课</van-button>
           </div>
         </van-pull-refresh>
       </van-tab>
@@ -25,7 +25,7 @@
           <div class="zb_empty">
             <img src="" alt="" />
             <p>还没有上课记录哦</p>
-            <van-button>立即约课</van-button>
+            <van-button @click="$router.push('/oto')">立即约课</van-button>
           </div>
         </van-pull-refresh>
       </van-tab>
@@ -100,7 +100,7 @@ export default {
   .zb_empty {
     text-align: center;
     font-size: 0.16rem;
-
+  height: 100%;
     img {
       width: 1.98rem;
       height: 1.42rem;
@@ -119,7 +119,7 @@ export default {
     }
   }
   .van-pull-refresh {
-    user-select: none;
-  }
+    height: 100%;
+  } 
 }
 </style>

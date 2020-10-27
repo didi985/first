@@ -3,6 +3,11 @@
     font-size: 0.25rem;
     color: #7d7e80 !important;
 }
+
 .zb_box .van-tabs .van-tab--active {
     color: #eb6100 !important;
-} 
+}
+
+.zb_otItem .van-dropdown-item__content {
+    height: 100%;
+}
