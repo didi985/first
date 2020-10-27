@@ -1,83 +1,37 @@
 <template>
-  <div class="zb_box">
-    <van-sticky>
-      <header>
-        <h3>约课记录</h3>
-      </header>
-    </van-sticky>
-    <van-tabs
-      v-model="active"
-      line-width="0.2rem"
-      line-height=".02rem"
-      color="#eb6100"
-    >
-      <van-tab title="待上课">
-        <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-          <div class="zb_empty">
-            <img src="" alt="" />
-            <p>还没有待上课记录哦</p>
-            <van-button @click="$router.push('/oto')">立即约课</van-button>
-          </div>
-        </van-pull-refresh>
-      </van-tab>
-      <van-tab title="已上课">
-        <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-          <div class="zb_empty">
-            <img src="" alt="" />
-            <p>还没有上课记录哦</p>
-            <van-button @click="$router.push('/oto')">立即约课</van-button>
-          </div>
-        </van-pull-refresh>
-      </van-tab>
-      <van-tab title="已取消">
-        <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-          <div class="zb_empty">
-            <img src="" alt="" />
-            <p>还没有取消上课记录哦</p>
-          </div>
-        </van-pull-refresh>
-      </van-tab>
-    </van-tabs>
-
+  <div>
+    约课记录
     <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import appFooter from "../components/Footer";
-import { Toast } from "vant";
-export default {
-  // 组件名称
-  name: "demo",
-  // 组件参数 接收来自父组件的数据
-  props: [],
-  // 局部注册的组件
-  components: { appFooter },
-  // 组件状态值
-  data() {
-    return {
-      active: 0,
-      isLoading: false,
-    };
-  },
-  // 计算属性
-  computed: {},
-  // 侦听器
-  watch: {},
-  // 组件方法
-  methods: {
-    onRefresh() {
-      setTimeout(() => {
-        Toast("刷新成功");
-        this.isLoading = false;
-      }, 1000);
-    },
-  },
-  created() {},
-  mounted() {},
-};
-</script> 
+  import appFooter from "../components/Footer";
 
+
+  export default {
+    // 组件名称
+    name: 'demo',
+    // 组件参数 接收来自父组件的数据
+    props: [],
+    // 局部注册的组件
+    components: {
+      appFooter
+     },
+    // 组件状态值
+    data() {
+      return {
+        active:3
+      }
+
+    },
+    // 计算属性
+    computed: {},
+    // 侦听器
+    watch: {},
+    // 组件方法
+
+<<<<<<< HEAD
 <style lang='scss' scoped>
 .zb_box {
   height: 100%;
@@ -118,9 +72,26 @@ export default {
       border-radius: .05rem;
       font-size: .16rem;
     }
+=======
+    methods: {},
+    // 以下是生命周期钩子   注：没用到的钩子请自行删除
+    /**
+    * 在实例初始化之后，组件属性计算之前，如data属性等
+    */
+    beforeCreate() {
+    },
+    /**
+    * 组件实例创建完成，属性已绑定，但DOM还未生成，$ el属性还不存在
+    */
+    created() {
+    },
+    mounted() {
+    },
+>>>>>>> f00db956289d7bceb366d5e39f973dd7e65114b2
   }
-  .van-pull-refresh {
-    height: 100%;
-  } 
-}
+</script>
+
+<style scoped>
+
+
 </style>

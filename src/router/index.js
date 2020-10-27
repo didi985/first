@@ -1,20 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import index from '../views/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  // 默认首页
   {
     path: '/',
-    name: 'Home',
-    component: Home, 
-  }, 
+<<<<<<< HEAD
+=======
+    // name: 'Home',
+    // component: Home
+    redirect: '/person',
+
+  },
   // 首页
   {
     path: '/index',
+>>>>>>> 655e8e9be10cdd6f60ffcf4fa984f98c99568c58
     name: 'index',
-    component: () => import('../views/index.vue'),
+    component: () => import('../views/index.vue'), 
   },
   // 课程
   {
@@ -28,7 +34,6 @@ const routes = [
     name: 'record',
     component: () => import('../views/record.vue'),
   },
-  // 练习
   {
     path: '/practise',
     name: 'practise',
@@ -39,25 +44,90 @@ const routes = [
     path: '/person',
     name: 'person',
     component: () => import('../views/person.vue'),
+
   },
-  // 立即约课
+  // 我的
   {
-    path: '/oto',
-    name: 'oto',
-    component: () => import('../views/oto.vue'),
+    path: '/about',
+    name: 'About',
+    component: function () {
+      return import('../views/About.vue')
+    }
   },
-  // 搜索
+  // 个人信息
   {
-    path: '/search',
-    name: 'search',
-    component: () => import('../views/search.vue'),
+    path: '/info',
+    name: 'info',
+    component: function () {
+      return import('../components/info.vue')
+    }
   },
+<<<<<<< HEAD
+  //学习日历
+  {
+    path: '/study-calendar',
+    name: 'study-calendar',
+    component: () => import('../views/study-calendar.vue'),
+  },
+    //学习日历
+    {
+      path: '/teacher',
+      name: 'teacher',
+      component: () => import('../views/Teacher.vue'),
+    },
+=======
+   // 特色课
+   {
+    path: '/my-study',
+    name: 'my-study',
+    component: function () {
+      return import('../components/my-study.vue')
+    }
+  },
+  // 学习币
+  {
+    path: '/my-currency',
+    name: 'my-currency',
+    component: function () {
+      return import('../components/my-currency.vue')
+    }
+  },
+<<<<<<< HEAD
   // 搜索
   {
     path: '/oto-plan',
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
   },
+=======
+  // 关注的老师
+  {
+    path: '/concern',
+    name: 'concern',
+    component: function () {
+      return import('../components/concern.vue')
+    }
+  },
+  // 收藏的东西
+  {
+    path: '/collect',
+    name: 'collect',
+    component: function () {
+      return import('../components/collect.vue')
+    }
+  },
+  // 课程订单
+  {
+    path: '/order',
+    name: 'order',
+    component: function () {
+      return import('../components/order.vue')
+    }
+  },
+
+
+>>>>>>> 655e8e9be10cdd6f60ffcf4fa984f98c99568c58
+>>>>>>> f00db956289d7bceb366d5e39f973dd7e65114b2
 ]
 
 const router = new VueRouter({

@@ -5,7 +5,7 @@ import store from '../store'
 // instance 新创建的一个axios 赋值给instance
 const instance = axios.create({
     // baseURL:'http://127.0.0.1:8888/api/private/v1/',
-    baseURL:'',
+    baseURL:'http://120.53.31.103:84',
     timeout: "7000"
 })
 
