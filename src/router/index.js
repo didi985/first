@@ -7,9 +7,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home, 
-  }, 
+    // name: 'Home',
+    // component: Home
+    redirect: '/person',
+
+  },
   // 首页
   {
     path: '/index',
@@ -28,7 +30,6 @@ const routes = [
     name: 'record',
     component: () => import('../views/record.vue'),
   },
-  // 练习
   {
     path: '/practise',
     name: 'practise',
@@ -39,19 +40,66 @@ const routes = [
     path: '/person',
     name: 'person',
     component: () => import('../views/person.vue'),
+
   },
-  // 立即约课
+  // 我的
   {
-    path: '/oto',
-    name: 'oto',
-    component: () => import('../views/oto.vue'),
+    path: '/about',
+    name: 'About',
+    component: function () {
+      return import('../views/About.vue')
+    }
   },
-  // 搜索
+  // 个人信息
   {
-    path: '/search',
-    name: 'search',
-    component: () => import('../views/search.vue'),
+    path: '/info',
+    name: 'info',
+    component: function () {
+      return import('../components/info.vue')
+    }
   },
+   // 特色课
+   {
+    path: '/my-study',
+    name: 'my-study',
+    component: function () {
+      return import('../components/my-study.vue')
+    }
+  },
+  // 学习币
+  {
+    path: '/my-currency',
+    name: 'my-currency',
+    component: function () {
+      return import('../components/my-currency.vue')
+    }
+  },
+  // 关注的老师
+  {
+    path: '/concern',
+    name: 'concern',
+    component: function () {
+      return import('../components/concern.vue')
+    }
+  },
+  // 收藏的东西
+  {
+    path: '/collect',
+    name: 'collect',
+    component: function () {
+      return import('../components/collect.vue')
+    }
+  },
+  // 课程订单
+  {
+    path: '/order',
+    name: 'order',
+    component: function () {
+      return import('../components/order.vue')
+    }
+  },
+
+
 ]
 
 const router = new VueRouter({
