@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import './assets/index.css'
 // 引入rem
 import './util/rem'
 // 引入过滤器   方法
@@ -16,16 +17,8 @@ import {gets,posts} from './util/api'
 Vue.prototype.$http=http
 Vue.prototype.$get=gets
 Vue.prototype.$post=posts
-
 // 引入vant
-import { NavBar,Swipe,SwipeItem } from 'vant';
-import 'vant/lib/swipe/style';
-import 'vant/lib/swipe-item/style';
-Vue.use(NavBar)
-Vue.use(Swipe);
-Vue.use(SwipeItem);
-
-
+import './util/vant'
 // 引入element-ui
 import { Button } from 'element-ui';
 Vue.use(Button)

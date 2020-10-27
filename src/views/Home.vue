@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="cxy_box">
       <!-- 轮播图布局 -->
       <div class="cxy_banner">
@@ -119,11 +120,41 @@
             </li>
           </ul>
         </div>
+=======
+  <div class="box">
+    <div class="banner">
+      <van-swipe class="my-swipe" :autoplay="3000" :show-indicators="false">
+        <van-swipe-item
+          ><img
+            src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg"
+            alt=""
+        /></van-swipe-item>
+        <van-swipe-item
+          ><img
+            src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019LnKumseuhw1569839569.jpg"
+            alt=""
+        /></van-swipe-item>
+        <van-swipe-item
+          ><img
+            src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20193KAjU2cB6h1569839562.jpg"
+            alt=""
+        /></van-swipe-item>
+        <van-swipe-item
+          ><img
+            src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20197Cxc53hktC1569839552.jpg"
+            alt=""
+        /></van-swipe-item>
+      </van-swipe>
+    </div>
+    <app-footer></app-footer>
+>>>>>>> 20d75217432e424a4c4e4ee5ddc85b99ae488ec9
   </div>
 </template>
 
 <script>
+import appFooter from "../components/Footer";
 export default {
+  components: { appFooter },
   data() {
     return {};
   },
@@ -134,15 +165,20 @@ export default {
 </script>
 
 <style lang="scss">
+<<<<<<< HEAD
 
 //轮播图盒子
 .banner{
     height: 4.3rem;
+=======
+.banner {
+  height: 4.3rem;
+>>>>>>> 20d75217432e424a4c4e4ee5ddc85b99ae488ec9
 }
 .my-swipe .van-swipe-item {
   height: 4.3rem;
-  img{
-      height: 4.3rem;
+  img {
+    height: 4.3rem;
   }
 }
 //最外层盒子
