@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import './assets/index.css'
 // 引入rem
 import './util/rem'
 // 引入过滤器   方法

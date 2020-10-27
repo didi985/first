@@ -22,7 +22,7 @@ export default {
   // 组件状态值
   data() {
     return {
-      active: JSON.parse(sessionStorage.getItem("active")) || 0,
+      active: JSON.parse(sessionStorage.getItem("foot-active")) || 0,
     };
   },
   // 计算属性
@@ -35,7 +35,7 @@ export default {
     act() {
       console.log(this.active);
       //   保存本地
-      sessionStorage.setItem("active", this.active);
+      sessionStorage.setItem("foot-active", this.active);
     },
   },
   created() {},
