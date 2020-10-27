@@ -6,14 +6,14 @@
           <van-icon name="arrow-left" />
         </div>
         <h3>一对一辅导</h3>
-        <div class="right" @click="$router.push('/search?name=oto')"><van-icon name="search" /></div>
+        <div class="right" @click="$router.push('/search')"><van-icon name="search" /></div>
       </header>
     </van-sticky>
     <!-- 下拉菜单 -->
     <van-dropdown-menu>
       <van-dropdown-item title="选择上课时间"> </van-dropdown-item>
       <van-dropdown-item title="选择老师条件">
-        <div class="teacher">12345678</div>
+        <!-- <div class="teacher">12345678</div> -->
       </van-dropdown-item>
     </van-dropdown-menu>
     <!-- 列表展示 -->

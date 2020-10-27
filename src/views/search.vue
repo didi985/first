@@ -118,11 +118,9 @@ export default {
     button {
       color: #fff;
       background: #eb6100;
-      width: 1.9rem;
+      width: 1.8rem;
       height: 0.6rem;
-      border-radius: .1rem;
-    font-size: 0.16rem;
-
+      border-radius: inherit;
     }
   }
   .van-pull-refresh {

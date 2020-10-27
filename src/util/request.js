@@ -6,6 +6,7 @@ import store from '../store'
 const instance = axios.create({
     // baseURL:'http://127.0.0.1:8888/api/private/v1/',
     baseURL:'http://120.53.31.103:84',
+    // baseURL:'https://wap.365msmk.com',
     timeout: "7000"
 })
 

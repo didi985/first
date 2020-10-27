@@ -113,6 +113,18 @@ const routes = [
       return import('../components/order.vue')
     }
   },
+  // 立即约课
+  {
+    path: '/oto',
+    name: 'oto',
+    component: () => import('../views/oto.vue'),
+  },
+  // 搜索
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('../views/search.vue'),
+  },
 
 ]
 

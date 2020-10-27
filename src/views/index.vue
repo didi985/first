@@ -30,19 +30,19 @@
       <p class="cxy_page"><span></span>名师阵容</p>
       <div class="cxy_content">
         <ul class="cxy_item">
-          <li @click="$router.push('/teacher')">
+          <li @click="$router.push('/teacher')" v-for="(item,index) in HomeArr5.list" :key="index">
             <div>
-            <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png" alt="">
+            <img :src="item.teacher_avatar" alt="">
             </div>
             <div class="cxy_txt">
-              <p>杨德胜</p>
+              <p>{{item.teacher_name}}</p>
               <p>　杨老师,特级教师.多次被中国数学会评为全国高中数学竞联赛优秀教练员。长期从事名校理科班的数学教学和数学竞赛辅导工作。
                 辅导学生参加全国高中数学联赛有数百人次获全国高中数学联赛一、二、三等奖，数十人被免试保送到清华大学、北京大学等名牌大学学习。十多人获CMO获一、二、三等奖，一人获IMO金牌。
               特别是近年来大学试行自主招生，有很多同学通过上他的竞赛辅导课进入清华大学、北京大学、上海交通大学等。</p>
             </div>
           </li>
 
-          <li>
+          <!-- <li>
             <div>
             <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png" alt="">
             </div>
@@ -52,7 +52,7 @@
                 辅导学生参加全国高中数学联赛有数百人次获全国高中数学联赛一、二、三等奖，数十人被免试保送到清华大学、北京大学等名牌大学学习。十多人获CMO获一、二、三等奖，一人获IMO金牌。
               特别是近年来大学试行自主招生，有很多同学通过上他的竞赛辅导课进入清华大学、北京大学、上海交通大学等。</p>
             </div>
-          </li>
+          </li> -->
 
         </ul>
       </div>
@@ -60,18 +60,18 @@
       <p class="cxy_page"><span></span>精品课程</p>
         <div class="cxy_jingpin">
           <ul class="cxy_item">
-            <li>
+            <li v-for="(item,index) in HomeArr2.list" :key="index">
               <div class="cxy_pos">
                   <img src="https://wap.365msmk.com/img/has-buy.6cfbd83d.png" alt="">
               </div>
-              <p class="one">每时每课特级教师-自主招生冲刺讲座6-多元方程组与可转化为多元方程组问题</p>
+              <p class="one">{{item.title}}</p>
               <div class="two">1课时</div>
               <div class="three">
-                <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png" alt="">
-                <span>杨德胜</span>
+                <img :src="item.cover_img" alt="">
+                <span>{{item.teachers_list.teacher_name}}</span>
               </div>
               <div class="four">
-                <span>150人报名</span>
+                <span>{{item.sales_num}}人报名</span>
                 <span>免费</span>
               </div>
             </li>
@@ -83,24 +83,24 @@
       <p class="cxy_page"><span></span>推荐课程</p>
         <div class="cxy_jingpin">
           <ul class="cxy_item">
-            <li>
+            <li v-for="(item,index) in HomeArr4.list" :key="index">
               <div class="cxy_pos">
                   <img src="https://wap.365msmk.com/img/has-buy.6cfbd83d.png" alt="">
               </div>
-              <p class="one">每时每课特级教师-自主招生冲刺讲座6-多元方程组与可转化为多元方程组问题</p>
+              <p class="one">{{item.description}}</p>
               <div class="two">1课时</div>
               <div class="three">
-                <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png" alt="">
+                <img :src="item.cover_img" alt="">
                 <span>杨德胜</span>
               </div>
               <div class="four">
-                <span>150人报名</span>
+                <span>{{item.sales_num}}人报名</span>
                 <span>免费</span>
               </div>
             </li>
           </ul>
         </div>
-          <div class="cxy_jingpin">
+          <!-- <div class="cxy_jingpin">
           <ul class="cxy_item">
             <li>
               <div class="cxy_pos">
@@ -118,17 +118,17 @@
               </div>
             </li>
           </ul>
-        </div>
+        </div> -->
      <!-- 明星讲师 -->
     <p class="cxy_page"><span></span>明星讲师</p>
             <div class="start">
               <ul>
-                <li>
+                <li v-for="(item,index) in HomeArr1.list" :key="index">
                   <div>
-                  <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png" alt="">
+                  <img :src="item.teacher_avatar" alt="">
                   </div>
                   <div class="cxy_txt">
-                    <p>杨老师</p>
+                    <p>{{item.teacher_name}}</p>
                     <p>　
                       中学一级教师，16年教学经验。学校骨干教师，有丰富的教学经验及毕业班经验。擅长阅读写作教学，
                       针对中考题型有独到的答题技巧和系统的作文教学。
@@ -149,7 +149,14 @@ import {gets,posts} from '../util/api'
 export default {
   components: { appFooter },
   data() {
-    return {};
+    return {
+      HomeArr1:[],
+      HomeArr2:[],
+      HomeArr4:[],
+      HomeArr5:[],
+
+      list:[]
+    };
   },
   created() {},
   mounted() {
@@ -158,7 +165,16 @@ export default {
   methods: {
    async getList(){
      let {data} = await gets('/api/app/recommend/appIndex')
-     console.log(data)
+     console.log(data.data)
+    // this.list = data.data
+     this.HomeArr1 = data.data[0]
+     this.HomeArr2 = data.data[1]
+     this.HomeArr4 = data.data[3]
+     this.HomeArr5 = data.data[4]
+
+    //  console.log(this.list)
+     console.log(this.HomeArr1)
+
    }
   },
 };
@@ -212,8 +228,9 @@ export default {
   font-size: 0.26rem;
   color: #595959;
   padding-left: 0.7rem;
-  height: 0.8rem;
-  line-height: 0.8rem;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  margin-top: 0.15rem;
   >span{
     background: red;
     // width: 0.02rem;
@@ -231,7 +248,7 @@ export default {
       justify-content: space-between;
       background-color: #fff;
       border-radius: 0.15rem;
-      margin-top: 0rem;
+      margin-top: 0.2rem;
       align-items: center;
           img{
           width: 0.8rem;
