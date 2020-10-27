@@ -18,7 +18,7 @@
     </van-dropdown-menu>
     <!-- 列表展示 -->
     <div>
-      <div class="zb_otItem">
+      <div class="zb_otItem" @click="$router.push('/oto-plan')">
         <van-image
           round
           width=".8rem"

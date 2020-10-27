@@ -52,6 +52,12 @@ const routes = [
     name: 'search',
     component: () => import('../views/search.vue'),
   },
+  // 搜索
+  {
+    path: '/oto-plan',
+    name: 'oto-plan',
+    component: () => import('../views/oto-plan.vue'),
+  },
 ]
 
 const router = new VueRouter({
