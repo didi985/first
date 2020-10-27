@@ -20,8 +20,10 @@ Vue.prototype.$post=posts
 // 引入vant
 import './util/vant'
 // 引入element-ui
-import { Button } from 'element-ui';
+import { Button,Card} from 'element-ui';
+import "element-ui/lib/theme-chalk/card.css";
 Vue.use(Button)
+Vue.use(Card)
 
 
 Vue.config.productionTip = false

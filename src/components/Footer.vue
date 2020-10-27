@@ -2,7 +2,7 @@
   <div> 
     <van-tabbar v-model="active" @change='act' active-color="rgb(235, 97, 0)" inactive-color="#000"
       >
-      <van-tabbar-item to="/index" icon="home-o" >首页</van-tabbar-item>
+      <van-tabbar-item to="/" icon="home-o" >首页</van-tabbar-item>
       <van-tabbar-item to="/course" icon="search">课程</van-tabbar-item>
       <van-tabbar-item to="/record" icon="friends-o">约课记录</van-tabbar-item>
       <van-tabbar-item to="/practise" icon="setting-o">练习</van-tabbar-item>

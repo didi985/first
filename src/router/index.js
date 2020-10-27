@@ -1,20 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import index from '../views/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  // 默认首页
   {
     path: '/',
-    name: 'Home',
-    component: Home, 
-  }, 
-  // 首页
-  {
-    path: '/index',
     name: 'index',
-    component: () => import('../views/index.vue'),
+    component: () => import('../views/index.vue'), 
   },
   // 课程
   {
@@ -40,6 +35,18 @@ const routes = [
     name: 'person',
     component: () => import('../views/person.vue'),
   },
+  //学习日历
+  {
+    path: '/study-calendar',
+    name: 'study-calendar',
+    component: () => import('../views/study-calendar.vue'),
+  },
+    //学习日历
+    {
+      path: '/teacher',
+      name: 'teacher',
+      component: () => import('../views/Teacher.vue'),
+    },
 ]
 
 const router = new VueRouter({

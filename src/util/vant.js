@@ -1,6 +1,7 @@
 // 引入vant
 import Vue from 'vue'
-import { NavBar,Swipe,SwipeItem,Tabbar, TabbarItem,Tab, Tabs,PullRefresh ,Button ,Sticky   } from 'vant';
+import { NavBar,Swipe,SwipeItem,Tabbar, TabbarItem,Tab, Tabs,PullRefresh ,Button ,Sticky ,Calendar,Card  } from 'vant';
+
 import 'vant/lib/swipe/style';
 import 'vant/lib/swipe-item/style';
 import 'vant/lib/tabbar/style';
@@ -11,6 +12,8 @@ import 'vant/lib/nav-bar/style';
 import 'vant/lib/pull-refresh/style';
 import 'vant/lib/button/style';
 import 'vant/lib/sticky/style';
+import 'vant/lib/calendar/style';
+import 'vant/lib/card/style';
 
 Vue.use(NavBar)
 Vue.use(Swipe);
@@ -22,3 +25,5 @@ Vue.use(Tabs);
 Vue.use(PullRefresh);
 Vue.use(Button);
 Vue.use(Sticky );
+Vue.use(Calendar);
+Vue.use(Card);
