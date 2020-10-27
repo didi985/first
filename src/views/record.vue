@@ -31,7 +31,9 @@
     watch: {},
     // 组件方法
 
-<<<<<<< HEAD
+  }
+</script>
+
 <style lang='scss' scoped>
 .zb_box {
   height: 100%;
@@ -72,26 +74,6 @@
       border-radius: .05rem;
       font-size: .16rem;
     }
-=======
-    methods: {},
-    // 以下是生命周期钩子   注：没用到的钩子请自行删除
-    /**
-    * 在实例初始化之后，组件属性计算之前，如data属性等
-    */
-    beforeCreate() {
-    },
-    /**
-    * 组件实例创建完成，属性已绑定，但DOM还未生成，$ el属性还不存在
-    */
-    created() {
-    },
-    mounted() {
-    },
->>>>>>> f00db956289d7bceb366d5e39f973dd7e65114b2
   }
-</script>
-
-<style scoped>
-
-
+}
 </style>

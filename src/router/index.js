@@ -8,17 +8,6 @@ const routes = [
   // 默认首页
   {
     path: '/',
-<<<<<<< HEAD
-=======
-    // name: 'Home',
-    // component: Home
-    redirect: '/person',
-
-  },
-  // 首页
-  {
-    path: '/index',
->>>>>>> 655e8e9be10cdd6f60ffcf4fa984f98c99568c58
     name: 'index',
     component: () => import('../views/index.vue'), 
   },
@@ -62,7 +51,7 @@ const routes = [
       return import('../components/info.vue')
     }
   },
-<<<<<<< HEAD
+
   //学习日历
   {
     path: '/study-calendar',
@@ -75,7 +64,7 @@ const routes = [
       name: 'teacher',
       component: () => import('../views/Teacher.vue'),
     },
-=======
+
    // 特色课
    {
     path: '/my-study',
@@ -92,14 +81,14 @@ const routes = [
       return import('../components/my-currency.vue')
     }
   },
-<<<<<<< HEAD
+
   // 搜索
   {
     path: '/oto-plan',
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
   },
-=======
+
   // 关注的老师
   {
     path: '/concern',
@@ -125,9 +114,6 @@ const routes = [
     }
   },
 
-
->>>>>>> 655e8e9be10cdd6f60ffcf4fa984f98c99568c58
->>>>>>> f00db956289d7bceb366d5e39f973dd7e65114b2
 ]
 
 const router = new VueRouter({

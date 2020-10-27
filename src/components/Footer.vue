@@ -1,14 +1,7 @@
 <template>
-<<<<<<< HEAD
   <div> 
-    <van-tabbar v-model="active" @change='act' active-color="rgb(235, 97, 0)" inactive-color="#000"
-      >
-      <van-tabbar-item to="/" icon="home-o" >首页</van-tabbar-item>
-=======
-  <div>
     <van-tabbar v-model="active" @change='act' active-color="rgb(235, 97, 0)" inactive-color="#000">
       <van-tabbar-item to="/index" icon="home-o" >首页</van-tabbar-item>
->>>>>>> 655e8e9be10cdd6f60ffcf4fa984f98c99568c58
       <van-tabbar-item to="/course" icon="search">课程</van-tabbar-item>
       <van-tabbar-item to="/record" icon="friends-o">约课记录</van-tabbar-item>
       <van-tabbar-item to="/practise" icon="setting-o">练习</van-tabbar-item>
@@ -28,7 +21,8 @@ export default {
   // 组件状态值
   data() {
     return {
-      active:0
+      active:0,
+    
     };
   },
   // 计算属性
