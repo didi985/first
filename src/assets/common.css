@@ -1,1 +1,11 @@
  /* 公共样式 */
+ *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+ }
+ html,body,#app{
+    width: 7.5rem;
+    height: 100%;
+ }

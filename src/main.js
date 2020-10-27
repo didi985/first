@@ -7,6 +7,8 @@ import './util/rem'
 // 引入过滤器   方法
 import './util/filters'
 import './util/plugins'
+// 引入vant
+import './util/vant'
 // 引入axios
 import http from './util/request'
 import './assets/common.css'
@@ -17,9 +19,8 @@ Vue.prototype.$http=http
 Vue.prototype.$get=gets
 Vue.prototype.$post=posts
 
-// 引入vant
-import { NavBar } from 'vant';
-Vue.use(NavBar)
+
+
 // 引入element-ui
 import { Button } from 'element-ui';
 Vue.use(Button)

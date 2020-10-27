@@ -5,14 +5,37 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <router-view/>
+    <Foot></Foot>
   </div>
 </template>
+<script>
+  import Foot from './components/Footer.vue'
+  export default {
+      data() {
+         return {
 
+         };
+      },
+      components: {
+        Foot
+      },
+      created() {
+
+      },
+      mounted() {
+
+      },
+      methods: {
+
+      }
+   };
+</script>
 <style lang="scss">
   html,body{
     height: 100%;
     font-size: 0.12rem;
   }
+
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
