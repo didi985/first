@@ -3,7 +3,7 @@
 import Vue from 'vue'
 
 import { NavBar,Swipe,SwipeItem,Tabbar, TabbarItem,Tab, 
-    Tabs,PullRefresh ,Button ,Sticky ,Calendar,Card ,Icon,DropdownMenu, DropdownItem,Search,List,Image as VanImage } from 'vant';
+    Tabs,PullRefresh ,Button ,Sticky ,Calendar,Card ,Icon,DropdownMenu, DropdownItem,Search,List,Image as VanImage,Overlay } from 'vant';
 import 'vant/lib/swipe/style';
 import 'vant/lib/icon/style';
 import 'vant/lib/nav-bar/style';
@@ -21,6 +21,7 @@ import 'vant/lib/dropdown-item/style';
 import 'vant/lib/search/style';
 import 'vant/lib/list/style';
 import 'vant/lib/image/style';
+import 'vant/lib/overlay/style';
 
 
 
@@ -42,5 +43,6 @@ Vue.use(DropdownItem);
 Vue.use(Search);
 Vue.use(List);
 Vue.use(VanImage);
+Vue.use(Overlay );
 
 
