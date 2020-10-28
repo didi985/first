@@ -14,12 +14,21 @@ const routes = [
     path: '/',
     // name: 'Home',
     // component: Home
+<<<<<<< HEAD
+    redirect: '/login',
+  },
+  // 登录
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/login/login.vue'),
+=======
     redirect: '/index',
+>>>>>>> 18504a47812d16f11b54017f4cdf82b482fc3ad8
   },
   // 首页
   {
     path: '/index',
-
     name: 'index',
     component: () => import('../views/index.vue'),
   },
@@ -61,6 +70,14 @@ const routes = [
       return import('../components/Course-detail.vue')
     }
   },
+    // 学习页面
+    {
+      path: '/study-detail',
+      name: 'study-detail',
+      component: function () {
+        return import('../components/study-detail.vue')
+      }
+    },
   // 搜索页面
   {
     path: '/Search',
@@ -162,6 +179,14 @@ const routes = [
       return import('../components/feedback.vue')
     }
   },
+   // 设置
+   {
+    path: '/options',
+    name: 'options',
+    component: function () {
+      return import('../components/options.vue')
+    }
+  },
 
 
   //学习日历
@@ -189,6 +214,15 @@ const routes = [
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
   },
+<<<<<<< HEAD
+  {
+    path: '/oto',
+    name: 'oto',
+    component: () => import('../views/oto.vue'),
+  },
+  // 搜索
+=======
+>>>>>>> 18504a47812d16f11b54017f4cdf82b482fc3ad8
   {
     //题库选择 
     path: '/point',
@@ -201,6 +235,22 @@ const routes = [
     name: 'paper-package',
     component: () => import('../views/paper-package.vue'),
   },
+<<<<<<< HEAD
+  // 找回密码
+  {
+    path: '/forget-pass',
+    name: 'forget-pass',
+    component: () => import('../views/login/forget-pass.vue'),
+  },
+   // 学习卡兑换
+   {
+    path: '/exchange',
+    name: 'exchange',
+    component: () => import('../components/exchange.vue'),
+  },
+
+
+=======
   {
     //仿真练习
     path: '/exam',
@@ -220,6 +270,7 @@ const routes = [
     component: () => import('../views/error-list.vue'),
   }
  
+>>>>>>> 18504a47812d16f11b54017f4cdf82b482fc3ad8
 
 ]
 
