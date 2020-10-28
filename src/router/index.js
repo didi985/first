@@ -19,7 +19,6 @@ const routes = [
   // 首页
   {
     path: '/index',
-
     name: 'index',
     component: () => import('../views/index.vue'),
   },
@@ -61,6 +60,14 @@ const routes = [
       return import('../components/Course-detail.vue')
     }
   },
+    // 学习页面
+    {
+      path: '/study-detail',
+      name: 'study-detail',
+      component: function () {
+        return import('../components/study-detail.vue')
+      }
+    },
   // 搜索页面
   {
     path: '/Search',
@@ -160,6 +167,14 @@ const routes = [
     name: 'feedback',
     component: function () {
       return import('../components/feedback.vue')
+    }
+  },
+   // 设置
+   {
+    path: '/options',
+    name: 'options',
+    component: function () {
+      return import('../components/options.vue')
     }
   },
 

@@ -1,33 +1,14 @@
 
 // 引入vant
 import Vue from 'vue'
-import { 
-    NavBar,
-    Swipe,
-    SwipeItem,
-    Tabbar, 
-    TabbarItem,
-    Tab, 
-    Tabs,
-    PullRefresh ,
-    Button ,
-    Sticky ,
-    Calendar,
-    Card ,
-    Icon,
-    Grid, 
-    GridItem,
-    Search ,
-    Sidebar, 
-    SidebarItem,
-    TreeSelect ,
-    DropdownMenu, 
-    DropdownItem,
-    Dialog ,
-    List,
-    Image as VanImage,
-    Overlay
-} from 'vant';
+
+import { NavBar,Swipe,SwipeItem,Tabbar, TabbarItem,Tab, 
+    Tabs,PullRefresh ,Button ,Sticky ,Calendar,Card ,Icon,DropdownMenu,Popup,
+
+     DropdownItem,Search,List,Image as VanImage,Overlay,Dialog,TreeSelect ,SidebarItem,Sidebar,
+     Grid, 
+     GridItem} from 'vant';
+
 import 'vant/lib/swipe/style';
 import 'vant/lib/icon/style';
 import 'vant/lib/nav-bar/style';
@@ -50,11 +31,10 @@ import 'vant/lib/dialog/style';
 import 'vant/lib/pull-refresh/style';
 import 'vant/lib/search/style';
 import 'vant/lib/list/style';
+import 'vant/lib/popup/style';
 import 'vant/lib/image/style';
 import 'vant/lib/overlay/style';
 
-Vue.use(Dialog);
-Vue.use(TreeSelect);
 Vue.use(Swipe);
 Vue.use(NavBar);
 Vue.use(SwipeItem);
@@ -78,5 +58,9 @@ Vue.use(Search);
 Vue.use(List);
 Vue.use(VanImage);
 Vue.use(Overlay );
+Vue.use(Popup);
+Vue.use(Dialog);
+Vue.use(TreeSelect);
+
 
 
