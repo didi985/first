@@ -5,10 +5,13 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <router-view/>
+    <frame />
   </div>
 </template>
 <script>
+import frame from './components/Frame'
   export default {
+    components:{frame},
       data() {
          return {
 

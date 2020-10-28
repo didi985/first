@@ -14,7 +14,7 @@ const routes = [
     path: '/',
     // name: 'Home',
     // component: Home
-    redirect: '/person',
+    redirect: '/index',
   },
   // 首页
   {
@@ -185,20 +185,49 @@ const routes = [
       component: () => import('../views/Teacher.vue'),
     },
 
-  // 搜索
+  //一对一辅导
+  {
+    path: '/oto',
+    name: 'oto',
+    component: () => import('../views/oto.vue'),
+  },
+  // 一对一辅导详情
   {
     path: '/oto-plan',
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
   },
-
-
-  // 搜索
   {
-    path: '/search',
-    name: 'search',
-    component: () => import('../views/search.vue'),
+    //题库选择 
+    path: '/point',
+    name: 'point',
+    component: () => import('../views/point.vue'),
   },
+  {
+    //套卷练习
+    path: '/paper-package',
+    name: 'paper-package',
+    component: () => import('../views/paper-package.vue'),
+  },
+  {
+    //仿真练习
+    path: '/exam',
+    name: 'exam',
+    component: () => import('../views/exam.vue'),
+  },
+  {
+    //错题练习
+    path: '/error-ques',
+    name: 'error-ques',
+    component: () => import('../views/error-ques.vue'),
+  },
+  {
+    //
+    path: '/error-list',
+    name: 'error-list',
+    component: () => import('../views/error-list.vue'),
+  }
+ 
 
 ]
 

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import store from '../store'
+// axios.defaults.withCredentials = true;//配置为true
 
 // export default instance;
 // instance 新创建的一个axios 赋值给instance

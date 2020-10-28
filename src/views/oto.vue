@@ -10,7 +10,7 @@
       </header>
     </van-sticky>
     <!-- 下拉菜单 -->
-    <van-dropdown-menu>
+    <van-dropdown-menu class="menu">
       <van-dropdown-item title="选择上课时间"> </van-dropdown-item>
       <van-dropdown-item title="选择老师条件">
         <!-- <div class="teacher">12345678</div> -->
