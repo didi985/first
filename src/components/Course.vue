@@ -77,7 +77,7 @@
 > -->
     <div>
       <div class="tad-nei">
-        <div class="tad-dan">
+        <div class="tad-dan" @click="danxiang">
             <p class="tad-p1">李老师课堂开课了快来看看</p>
             <div class="tad-sj">
               <p>
@@ -152,13 +152,14 @@
 <!-- 加载更多 -->
 
 
+<Footer></Footer>
   </div>
 </template>
 
 <script>
 import { Toast } from "vant";
 
-
+import Footer from '../components/Footer'
 export default {
   data() {
     return {
@@ -177,6 +178,9 @@ export default {
   mounted() {},
   // 计算属性
   computed: {},
+  components: {
+  Footer
+},
   watch: {},
   methods: {
     // 搜索按钮
@@ -194,6 +198,9 @@ export default {
       this.$router.push('/Search')
     },
 
+    danxiang(){
+      this.$router.push('/Course-detail')
+    }
 
      // 加载更多
     //  onLoad() {
@@ -334,7 +341,7 @@ export default {
     font-size: .24rem;
     color: rgba(0,0,0,.45);
     margin-left: 0.17rem;
-    margin-right: .35rem;
+    margin-right: .2rem;
 }
 .tad-ren{
   border-top: 1px solid #f5f5f5;

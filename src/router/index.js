@@ -61,6 +61,14 @@ const routes = [
       return import('../components/Course-detail.vue')
     }
   },
+    // 学习页面
+    {
+      path: '/study-detail',
+      name: 'study-detail',
+      component: function () {
+        return import('../components/study-detail.vue')
+      }
+    },
   // 搜索页面
   {
     path: '/Search',
