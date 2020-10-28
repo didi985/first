@@ -176,6 +176,24 @@ const routes = [
       name: 'teacher',
       component: () => import('../views/Teacher.vue'),
     },
+    //测评记录
+    {
+      path: '/assess',
+      name: 'assess',
+      component: () => import('../views/assess.vue'),
+    },
+    //习题收藏
+    {
+      path: '/ques-collect',
+      name: 'ques-collect',
+      component: () => import('../views/ques-collect.vue'),
+    },
+    //习题详情
+    {
+      path: '/ques',
+      name: 'ques',
+      component: () => import('../views/ques.vue'),
+    },
 
   //一对一辅导
   {
