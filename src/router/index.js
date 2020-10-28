@@ -10,12 +10,17 @@ const routes = [
     path: '/',
     // name: 'Home',
     // component: Home
-    redirect: '/person',
+    redirect: '/login',
+  },
+  // 登录
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/login/login.vue'),
   },
   // 首页
   {
     path: '/index',
-
     name: 'index',
     component: () => import('../views/index.vue'),
   },
@@ -139,6 +144,14 @@ const routes = [
       return import('../components/feedback.vue')
     }
   },
+   // 设置
+   {
+    path: '/options',
+    name: 'options',
+    component: function () {
+      return import('../components/options.vue')
+    }
+  },
 
 
   //学习日历
@@ -160,14 +173,31 @@ const routes = [
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
   },
-
-
+  {
+    path: '/oto',
+    name: 'oto',
+    component: () => import('../views/oto.vue'),
+  },
   // 搜索
   {
     path: '/search',
     name: 'search',
     component: () => import('../views/search.vue'),
   },
+  // 找回密码
+  {
+    path: '/forget-pass',
+    name: 'forget-pass',
+    component: () => import('../views/login/forget-pass.vue'),
+  },
+   // 学习卡兑换
+   {
+    path: '/exchange',
+    name: 'exchange',
+    component: () => import('../components/exchange.vue'),
+  },
+
+
 
 ]
 
