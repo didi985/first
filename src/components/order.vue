@@ -29,7 +29,23 @@
 
          </van-tab>
          <van-tab title="待支付" name="b">暂无订单</van-tab>
-         <van-tab title="已完成" name="c">已完成</van-tab>
+         <van-tab title="已完成" name="c">
+             <div class="zqd_order">
+                  <p class="zqd_p1">
+                     <span class="zqd_sp2">订单编号：2020071713544868021</span>
+                     <span class="zqd_sp3">交易完成</span>
+                  </p>
+                  <ul class="zqd_p2">
+                     <li>李老师18号20号地理大课堂开课了</li>
+                     <li class="zqd_time">时间：220.07.17  13.54</li>
+                     <li class="zqd_time">实付款：0</li>
+                     <li>
+                        <button class="zqd_btn">加入学习</button>
+                     </li>
+                  </ul>
+            </div>
+         </van-tab>
+
          <van-tab title="已取消" name="d">暂无订单</van-tab>
 
        </van-tabs>

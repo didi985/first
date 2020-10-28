@@ -1,5 +1,3 @@
-2020-10-27 20:02:11
-
 <template>
   <div class="zb_box">
     <van-sticky>
@@ -35,12 +33,11 @@
         <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
           <div class="zb_empty">
             <img src="" alt="" />
-            <p>还没有取消上课记录哦 </p>
+            <p>还没有取消上课记录哦</p>
           </div>
         </van-pull-refresh>
       </van-tab>
     </van-tabs>
-
 
     <app-footer></app-footer>
   </div>
@@ -49,18 +46,20 @@
 
 <script>
 import appFooter from "../components/Footer";
-import { Toast } from "vant";
+
 export default {
   // 组件名称
   name: "demo",
   // 组件参数 接收来自父组件的数据
   props: [],
   // 局部注册的组件
-  components: { appFooter },
+  components: {
+    appFooter,
+  },
   // 组件状态值
   data() {
     return {
-      active: 0,
+      active: 3,
       isLoading: false,
     };
   },
@@ -69,30 +68,42 @@ export default {
   // 侦听器
   watch: {},
   // 组件方法
+
   methods: {
     onRefresh() {
       setTimeout(() => {
         Toast("刷新成功");
         this.isLoading = false;
+        this.count++;
       }, 1000);
     },
   },
+  // 以下是生命周期钩子   注：没用到的钩子请自行删除
+  /**
+   * 在实例初始化之后，组件属性计算之前，如data属性等
+   */
+  beforeCreate() {},
+  /**
+   * 组件实例创建完成，属性已绑定，但DOM还未生成，$ el属性还不存在
+   */
   created() {},
   mounted() {},
 };
-</script> 
+</script>
 
+<style scoped>
+</style>
 
 <style lang='scss' scoped>
 .zb_box {
   height: 100%;
   background-color: #f0f2f5;
   header {
-    height: .88rem;
-    line-height: .88rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
     background-color: #fff;
     text-align: center;
-    font-size: 0.30rem;
+    font-size: 0.3rem;
     h3 {
       font-weight: 400;
       color: #595959;
@@ -105,7 +116,7 @@ export default {
   .zb_empty {
     text-align: center;
     font-size: 0.16rem;
-  height: 100%;
+    height: 100%;
     img {
       width: 1.98rem;
       height: 1.42rem;
@@ -120,13 +131,13 @@ export default {
       background: #eb6100;
       width: 1.9rem;
       height: 0.6rem;
-      border-radius: .1rem;
-    font-size: 0.16rem;
-
+      border-radius: 0.1rem;
+      font-size: 0.16rem;
     }
   }
   .van-pull-refresh {
     height: 100%;
-  } 
+  }
 }
 </style>
+>>>>>>> 7c454feb7f9d21328cc54f84466b3059afded72e

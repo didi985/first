@@ -32,10 +32,7 @@
     font-size: 0.13rem;
   }
 
- #app {
-  background-color: #f0f2f5;
-}
-/*
+
 #nav {
   padding: 30px;
 
@@ -47,5 +44,5 @@
       color: #42b983;
     }
   }
-} */
+} 
 </style>
