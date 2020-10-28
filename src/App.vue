@@ -5,20 +5,16 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <router-view/>
-    <Foot></Foot>
   </div>
 </template>
 <script>
-  import Foot from './components/Footer.vue'
   export default {
       data() {
          return {
 
          };
       },
-      components: {
-        Foot
-      },
+
       created() {
 
       },

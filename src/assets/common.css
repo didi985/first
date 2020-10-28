@@ -9,3 +9,10 @@
     width: 7.5rem;
     height: 100%;
  }
+ .zqd_ul .van-nav-bar__text{
+   color: #000 !important;
+   font-size: 0.12rem;
+}
+.zqd_ul .van-icon{
+      color: #000 !important;
+ }

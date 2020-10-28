@@ -1,12 +1,12 @@
 <template>
     <div>
-       <!-- 头部样式 -->
-      <van-nav-bar title="个人信息" left-text="" left-arrow @click-left="zqd_go()">
+       <!-- 表头 -->
+       <van-nav-bar title="我的关注" left-text="" left-arrow @click-left="zqd_go()">
          <template #right>
-           <!-- <van-icon name="search" size="18" /> -->
+            <!-- <span class="zqd_sp">余额明细</span> -->
          </template>
-       </van-nav-bar>
-
+      </van-nav-bar>
+      暂无关注
     </div>
 </template>
 

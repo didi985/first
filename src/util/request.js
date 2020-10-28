@@ -5,7 +5,7 @@ import store from '../store'
 // instance 新创建的一个axios 赋值给instance
 const instance = axios.create({
     // baseURL:'http://127.0.0.1:8888/api/private/v1/',
-    baseURL:'',
+    baseURL:'https://wap.365msmk.com ',
     timeout: "7000"
 })
 
