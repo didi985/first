@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import index from '../views/index.vue'
+
+import Home from '../views/Home.vue'
+import Course from '../components/Course.vue'
+import Search from '../components/Search.vue'
+
 
 Vue.use(VueRouter)
 
@@ -10,6 +14,7 @@ const routes = [
     path: '/',
     // name: 'Home',
     // component: Home
+<<<<<<< HEAD
     redirect: '/login',
   },
   // 登录
@@ -17,6 +22,9 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('../views/login/login.vue'),
+=======
+    redirect: '/index',
+>>>>>>> 18504a47812d16f11b54017f4cdf82b482fc3ad8
   },
   // 首页
   {
@@ -28,7 +36,7 @@ const routes = [
   {
     path: '/course',
     name: 'course',
-    component: () => import('../views/course.vue'),
+    component: () => import('../components/Course.vue'),
   },
   // 约课记录
   {
@@ -49,6 +57,33 @@ const routes = [
 
   },
   // 我的
+  {
+    path: '/Course',
+    name: 'Course',
+    component: Course
+  },
+  // 课程单页面
+  {
+    path: '/Course-detail',
+    name: 'Course-detail',
+    component: function () {
+      return import('../components/Course-detail.vue')
+    }
+  },
+    // 学习页面
+    {
+      path: '/study-detail',
+      name: 'study-detail',
+      component: function () {
+        return import('../components/study-detail.vue')
+      }
+    },
+  // 搜索页面
+  {
+    path: '/Search',
+    name: 'Search',
+    component: Search
+  },
   {
     path: '/about',
     name: 'About',
@@ -167,23 +202,40 @@ const routes = [
       component: () => import('../views/Teacher.vue'),
     },
 
-  // 搜索
+  //一对一辅导
+  {
+    path: '/oto',
+    name: 'oto',
+    component: () => import('../views/oto.vue'),
+  },
+  // 一对一辅导详情
   {
     path: '/oto-plan',
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
   },
+<<<<<<< HEAD
   {
     path: '/oto',
     name: 'oto',
     component: () => import('../views/oto.vue'),
   },
   // 搜索
+=======
+>>>>>>> 18504a47812d16f11b54017f4cdf82b482fc3ad8
   {
-    path: '/search',
-    name: 'search',
-    component: () => import('../views/search.vue'),
+    //题库选择 
+    path: '/point',
+    name: 'point',
+    component: () => import('../views/point.vue'),
   },
+  {
+    //套卷练习
+    path: '/paper-package',
+    name: 'paper-package',
+    component: () => import('../views/paper-package.vue'),
+  },
+<<<<<<< HEAD
   // 找回密码
   {
     path: '/forget-pass',
@@ -198,6 +250,27 @@ const routes = [
   },
 
 
+=======
+  {
+    //仿真练习
+    path: '/exam',
+    name: 'exam',
+    component: () => import('../views/exam.vue'),
+  },
+  {
+    //错题练习
+    path: '/error-ques',
+    name: 'error-ques',
+    component: () => import('../views/error-ques.vue'),
+  },
+  {
+    //
+    path: '/error-list',
+    name: 'error-list',
+    component: () => import('../views/error-list.vue'),
+  }
+ 
+>>>>>>> 18504a47812d16f11b54017f4cdf82b482fc3ad8
 
 ]
 

@@ -1,7 +1,7 @@
 <template>
   <div class="cxy_box">
     <header>
-      <p>
+      <p @click="$router.back()">
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAPCAYAAADd/14OAAAA/ElEQVQoU33RsUvWYRTF8c8hQmgIE4e2IFDQIfCPcHGIlBpqcWtPcFHBFgWdHGxykURxUtfWZkfHtkZBCBzcrjzxe+P9ha/P9sD33nPuOfHIq6pJnOBZRnFVNYdzvML+g2BVfcIBnuJLkm89sKqeYAcruMaHJD+b6j+wqiZwinlcYinJ74G1v2BVven8vMYRPie5G/afqnqPQ4xhNcneQwc28AYvsJ1kfVQKDVzAMZ5jE1tJ6v+BgcdpXGAGZ1hOctvzOPhUVdvYDnmLKywm+dW7eghuCl+xgT/4mORHL8dhmap6h++tY6wl2X2s69nO91SLbyTYFTHebX55D93jTsSH0JDDAAAAAElFTkSuQmCC"
           alt=""
@@ -44,7 +44,7 @@
         </van-tab>
         <van-tab title="主讲课程" name="b">
           <el-card>
-            <div>
+            <div @click="$router.push('/course-detail')">
               <p>每时每课特级教师-自主招生冲刺讲座10-二次函数4--存在性问题</p>
               <p>共1课时</p>
               <div class="cxy_cen">

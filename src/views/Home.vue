@@ -48,29 +48,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.my-swipe .van-swipe-item {
-  color: #fff;
-  font-size: 0.2rem;
-  /* line-height: 1.5rem; */
-  height: 4rem;
-  text-align: center;
-  background-color: #39a9ed;
-}
-.van-swipe-item > img {
-  /* width: 100%; */
-  width: 7.5rem;
-  height: 4rem;
-}
+   span{
+      font-size: 0.16rem;
+   }
+    .my-swipe .van-swipe-item {
+    color: #fff;
+    font-size: 20px;
+    line-height: 150px;
+    text-align: center;
+    background-color: #39a9ed;
+  }
+
 </style>
 
-</script>
 
-<style lang="scss">
-.banner {
-  height: 4.3rem;
-}
-.my-swipe .van-swipe-item {
-  height: 4.3rem;
-}
-</style>
 

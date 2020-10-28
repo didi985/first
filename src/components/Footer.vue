@@ -1,9 +1,13 @@
 
 <template>
-  <div>
-    <van-tabbar v-model="active" @change='act' active-color="rgb(235, 97, 0)" inactive-color="#000">
-      <van-tabbar-item to="/index" icon="home-o" >首页</van-tabbar-item>
-
+  <div class="footer">
+    <van-tabbar
+      v-model="active"
+      @change="act"
+      active-color="rgb(235, 97, 0)"
+      inactive-color="#000"
+    >
+      <van-tabbar-item to="/index" icon="home-o">首页</van-tabbar-item>
       <van-tabbar-item to="/course" icon="search">课程</van-tabbar-item>
       <van-tabbar-item to="/record" icon="friends-o">约课记录</van-tabbar-item>
       <van-tabbar-item to="/practise" icon="setting-o">练习</van-tabbar-item>
@@ -24,7 +28,7 @@ export default {
   // 组件状态值
   data() {
     return {
-      active:0
+      active: JSON.parse(sessionStorage.getItem("active")) || 0,
     };
   },
   // 计算属性
@@ -39,7 +43,6 @@ export default {
       //   保存本地
 
       sessionStorage.setItem("active", this.active);
-
     },
   },
   created() {},
@@ -48,5 +51,6 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
+
 </style>

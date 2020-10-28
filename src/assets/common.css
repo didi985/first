@@ -1,19 +1,49 @@
  /* 公共样式 */
- *{
+ * {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
  }
- html,body,#app{
+
+ html,
+ body,
+ #app {
     width: 7.5rem;
     height: 100%;
  }
- .zqd_ul .van-nav-bar__text{
-   color: #000 !important;
-   font-size: 0.12rem;
-}
-.zqd_ul .van-icon{
-      color: #000 !important;
+
+ /* .zqd_ul .van-nav-bar__text {
+    color: #000 !important;
+    font-size: 0.12rem;
  }
 
+<<<<<<< HEAD
+=======
+ .zqd_ul .van-icon {
+    color: #000 !important;
+ }
+
+ .zb_box .van-dropdown-menu__bar {
+    height: .84rem !important;
+ } */
+
+ 
+
+ .zb_box .van-tabs {
+    height: .0rem;
+    font-size: 0.25rem;
+    color: #7d7e80 !important;
+ }
+
+ .zb_box .van-tabs .van-tab--active {
+    color: #eb6100 !important;
+ }
+ .footer .van-tabbar {
+   height: 1rem;
+   font-size: 2.93333vw;
+ }
+ .footer.van-icon ,.footer .van-tabbar-item__text {
+   font-size: 2.93333vw;
+ }
+>>>>>>> 18504a47812d16f11b54017f4cdf82b482fc3ad8

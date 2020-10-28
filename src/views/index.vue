@@ -41,19 +41,6 @@
               特别是近年来大学试行自主招生，有很多同学通过上他的竞赛辅导课进入清华大学、北京大学、上海交通大学等。</p>
             </div>
           </li>
-
-          <!-- <li>
-            <div>
-            <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png" alt="">
-            </div>
-            <div class="cxy_txt">
-              <p>杨德胜</p>
-              <p>　杨老师,特级教师.多次被中国数学会评为全国高中数学竞联赛优秀教练员。长期从事名校理科班的数学教学和数学竞赛辅导工作。
-                辅导学生参加全国高中数学联赛有数百人次获全国高中数学联赛一、二、三等奖，数十人被免试保送到清华大学、北京大学等名牌大学学习。十多人获CMO获一、二、三等奖，一人获IMO金牌。
-              特别是近年来大学试行自主招生，有很多同学通过上他的竞赛辅导课进入清华大学、北京大学、上海交通大学等。</p>
-            </div>
-          </li> -->
-
         </ul>
       </div>
       <!-- 精品课程 -->
@@ -154,7 +141,6 @@ export default {
       HomeArr2:[],
       HomeArr4:[],
       HomeArr5:[],
-
       list:[]
     };
   },
@@ -165,15 +151,11 @@ export default {
   methods: {
    async getList(){
      let {data} = await gets('/api/app/recommend/appIndex')
-     console.log(data.data)
-    // this.list = data.data
+
      this.HomeArr1 = data.data[0]
      this.HomeArr2 = data.data[1]
      this.HomeArr4 = data.data[3]
      this.HomeArr5 = data.data[4]
-
-    //  console.log(this.list)
-     console.log(this.HomeArr1)
 
    }
   },
@@ -302,8 +284,8 @@ export default {
         right: 0.5rem;
         top: 40%;
         img{
-          width: 1.2rem;
-          height: 1.2rem;
+          width: 1rem;
+          height: 1rem;
         }
         // background: url('https://wap.365msmk.com/img/has-buy.6cfbd83d.png') no-repeat;
       }
