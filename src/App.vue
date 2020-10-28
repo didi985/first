@@ -7,19 +7,31 @@
     <router-view/>
   </div>
 </template>
+<script>
+  export default {
+      data() {
+         return {
 
+         };
+      },
+
+      created() {
+
+      },
+      mounted() {
+
+      },
+      methods: {
+
+      }
+   };
+</script>
 <style lang="scss">
   html,body{
     height: 100%;
-    font-size: 0.12rem;
+    font-size: 0.13rem;
   }
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+
 
 #nav {
   padding: 30px;
@@ -32,5 +44,5 @@
       color: #42b983;
     }
   }
-} */
+} 
 </style>

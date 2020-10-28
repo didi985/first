@@ -7,7 +7,7 @@ import './util/rem'
 // 引入过滤器   方法
 import './util/filters'
 import './util/plugins'
-// 引入全局vant
+
 import './util/vant'
 // 引入axios
 import http from './util/request'
@@ -20,6 +20,7 @@ import {gets,posts} from './util/api'
 Vue.prototype.$http=http
 Vue.prototype.$get=gets
 Vue.prototype.$post=posts
+
 
 Vue.config.productionTip = false
 
