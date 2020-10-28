@@ -14,7 +14,7 @@ const routes = [
     path: '/',
     // name: 'Home',
     // component: Home
-    redirect: '/person',
+    redirect: '/index',
   },
   // 首页
   {
@@ -177,20 +177,19 @@ const routes = [
       component: () => import('../views/Teacher.vue'),
     },
 
-  // 搜索
+  //一对一辅导
+  {
+    path: '/oto',
+    name: 'oto',
+    component: () => import('../views/oto.vue'),
+  },
+  // 一对一辅导详情
   {
     path: '/oto-plan',
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
   },
-
-
-  // 搜索
-  {
-    path: '/search',
-    name: 'search',
-    component: () => import('../views/search.vue'),
-  },
+ 
 
 ]
 

@@ -5,7 +5,12 @@
       <!-- 导航栏 -->
       <van-nav-bar title="特色课">
         <template #right>
-          <van-icon name="search" size="0.3998rem" color="#7F7F7F" @click="sou"/>
+          <van-icon
+            name="search"
+            size="0.3998rem"
+            color="#7F7F7F"
+            @click="sou"
+          />
         </template>
       </van-nav-bar>
       <!-- 导航栏 -->
@@ -69,7 +74,7 @@
 
     <!-- 内容 -->
     <!-- 加载更多 -->
-<!-- <van-list
+    <!-- <van-list
   v-model="loading"
   :finished="finished"
   finished-text="没有更多了"
@@ -78,84 +83,90 @@
     <div>
       <div class="tad-nei">
         <div class="tad-dan">
-            <p class="tad-p1">李老师课堂开课了快来看看</p>
-            <div class="tad-sj">
-              <p>
-                 <van-icon name="aim" />
-                03月16日 18:30 ~ 03月22日 15:00
-                <van-icon name="down" />
-                </p>
-              <p>共8课时</p>
-            </div>
-            <div class="tad-tu">
-              <div>
-                <img src='../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png' alt="">
-                <font>李青</font>
-              </div>
-            </div>
-            <p class="tad-ren">
-              <span  >134人已报名</span>
-              <font >免费</font>
+          <p class="tad-p1">李老师课堂开课了快来看看</p>
+          <div class="tad-sj">
+            <p>
+              <van-icon name="aim" />
+              03月16日 18:30 ~ 03月22日 15:00
+              <van-icon name="down" />
             </p>
+            <p>共8课时</p>
+          </div>
+          <div class="tad-tu">
+            <div>
+              <img
+                src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png"
+                alt=""
+              />
+              <font>李青</font>
+            </div>
+          </div>
+          <p class="tad-ren">
+            <span>134人已报名</span>
+            <font>免费</font>
+          </p>
         </div>
 
-
-         <div class="tad-dan">
-            <p class="tad-p1">李老师课堂开课了快来看看</p>
-            <div class="tad-sj">
-              <p>
-                 <van-icon name="aim" />
-                03月16日 18:30 ~ 03月22日 15:00
-                <van-icon name="down" />
-                </p>
-              <p>共8课时</p>
-            </div>
-            <div class="tad-tu">
-              <div>
-                <img src='../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png' alt="">
-                <font>李青</font>
-              </div>
-            </div>
-            <p class="tad-ren">
-              <span  >134人已报名</span>
-              <font >免费</font>
+        <div class="tad-dan">
+          <p class="tad-p1">李老师课堂开课了快来看看</p>
+          <div class="tad-sj">
+            <p>
+              <van-icon name="aim" />
+              03月16日 18:30 ~ 03月22日 15:00
+              <van-icon name="down" />
             </p>
+            <p>共8课时</p>
+          </div>
+          <div class="tad-tu">
+            <div>
+              <img
+                src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png"
+                alt=""
+              />
+              <font>李青</font>
+            </div>
+          </div>
+          <p class="tad-ren">
+            <span>134人已报名</span>
+            <font>免费</font>
+          </p>
         </div>
 
-
-         <div class="tad-dan">
-            <p class="tad-p1">李老师课堂开课了快来看看</p>
-            <div class="tad-sj">
-              <p>
-                 <van-icon name="aim" />
-                03月16日 18:30 ~ 03月22日 15:00
-                <van-icon name="down" />
-                </p>
-              <p>共8课时</p>
-            </div>
-            <div class="tad-tu">
-              <div>
-                <img src='../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png' alt="">
-                <font>李青</font>
-              </div>
-            </div>
-            <p class="tad-ren">
-              <span  >134人已报名</span>
-              <font >免费</font>
+        <div class="tad-dan">
+          <p class="tad-p1">李老师课堂开课了快来看看</p>
+          <div class="tad-sj">
+            <p>
+              <van-icon name="aim" />
+              03月16日 18:30 ~ 03月22日 15:00
+              <van-icon name="down" />
             </p>
+            <p>共8课时</p>
+          </div>
+          <div class="tad-tu">
+            <div>
+              <img
+                src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png"
+                alt=""
+              />
+              <font>李青</font>
+            </div>
+          </div>
+          <p class="tad-ren">
+            <span>134人已报名</span>
+            <font>免费</font>
+          </p>
         </div>
-
       </div>
     </div>
 
-<!-- </van-list> -->
-<!-- 加载更多 -->
-
-
+    <!-- </van-list> -->
+    <!-- 加载更多 -->
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import appFooter from './Footer.vue'
 import { Toast } from "vant";
 
 
@@ -175,6 +186,7 @@ export default {
   name: "demo",
   props: {},
   mounted() {},
+  components:{appFooter},
   // 计算属性
   computed: {},
   watch: {},
@@ -290,66 +302,66 @@ export default {
   border-bottom: 0.01rem solid #f5f5f5;
 }
 .tad-nei {
-  background-color: #F0F2F5;
+  background-color: #f0f2f5;
   padding: 0.3rem;
 }
-.tad-dan{
-    background: #fff;
-    border-radius: .1rem;
-    padding: 0 0.28rem;
-    margin-bottom: .3rem;
-    position: relative;
+.tad-dan {
+  background: #fff;
+  border-radius: 0.1rem;
+  padding: 0 0.28rem;
+  margin-bottom: 0.3rem;
+  position: relative;
 }
-.tad-dan .tad-p1{
-    font-size: 0.3rem;
-    color: #333;
-    padding-top: 0.3rem;
-    margin: 0;
+.tad-dan .tad-p1 {
+  font-size: 0.3rem;
+  color: #333;
+  padding-top: 0.3rem;
+  margin: 0;
 }
-.tad-sj{
-      display: flex;
-    align-items: center;
+.tad-sj {
+  display: flex;
+  align-items: center;
 }
-.tad-sj p{
+.tad-sj p {
   margin: 0;
   margin-top: 0.2rem;
   font-size: 0.25rem;
 }
-.tad-tu{
+.tad-tu {
   width: 6.34rem;
   height: 1.3rem;
 }
-.tad-tu div{
+.tad-tu div {
   display: flex;
   height: 100%;
   align-items: center;
   width: 1.54rem;
 }
-.tad-tu img{
+.tad-tu img {
   width: 0.54rem;
   height: 0.54rem;
   border-radius: 50%;
 }
-.tad-tu font{
-    font-size: .24rem;
-    color: rgba(0,0,0,.45);
-    margin-left: 0.17rem;
-    margin-right: .35rem;
+.tad-tu font {
+  font-size: 0.24rem;
+  color: rgba(0, 0, 0, 0.45);
+  margin-left: 0.17rem;
+  margin-right: 0.35rem;
 }
-.tad-ren{
+.tad-ren {
   border-top: 1px solid #f5f5f5;
-    height: 0.87rem;
-    line-height: 0.87rem;
-    display: flex;
-    font-size: .25rem;
+  height: 0.87rem;
+  line-height: 0.87rem;
+  display: flex;
+  font-size: 0.25rem;
 }
-.tad-ren span{
+.tad-ren span {
   width: 5.4rem;
-  padding-right: .2rem;
-  color: rgba(0,0,0,.45);
+  padding-right: 0.2rem;
+  color: rgba(0, 0, 0, 0.45);
 }
-.tad-ren font{
+.tad-ren font {
   color: #44a426;
-  font-size: .35rem;
+  font-size: 0.35rem;
 }
 </style>
