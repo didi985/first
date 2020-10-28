@@ -39,8 +39,8 @@ const routes = [
   // 我的
   {
     path: '/person',
-    name: 'person',
-    component: () => import('../views/person.vue'),
+    name: 'Per',
+    component: () => import('../views/Per.vue'),
 
   },
   // 我的
@@ -139,7 +139,7 @@ const routes = [
       return import('../components/feedback.vue')
     }
   },
- 
+
 
   //学习日历
   {
