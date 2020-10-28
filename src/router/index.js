@@ -189,6 +189,36 @@ const routes = [
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
   },
+  {
+    //题库选择 
+    path: '/point',
+    name: 'point',
+    component: () => import('../views/point.vue'),
+  },
+  {
+    //套卷练习
+    path: '/paper-package',
+    name: 'paper-package',
+    component: () => import('../views/paper-package.vue'),
+  },
+  {
+    //仿真练习
+    path: '/exam',
+    name: 'exam',
+    component: () => import('../views/exam.vue'),
+  },
+  {
+    //错题练习
+    path: '/error-ques',
+    name: 'error-ques',
+    component: () => import('../views/error-ques.vue'),
+  },
+  {
+    //
+    path: '/error-list',
+    name: 'error-list',
+    component: () => import('../views/error-list.vue'),
+  }
  
 
 ]

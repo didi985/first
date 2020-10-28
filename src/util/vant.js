@@ -1,9 +1,33 @@
 
 // 引入vant
 import Vue from 'vue'
-
-import { NavBar,Swipe,SwipeItem,Tabbar, TabbarItem,Tab, 
-    Tabs,PullRefresh ,Button ,Sticky ,Calendar,Card ,Icon,DropdownMenu, DropdownItem,Search,List,Image as VanImage,Overlay } from 'vant';
+import { 
+    NavBar,
+    Swipe,
+    SwipeItem,
+    Tabbar, 
+    TabbarItem,
+    Tab, 
+    Tabs,
+    PullRefresh ,
+    Button ,
+    Sticky ,
+    Calendar,
+    Card ,
+    Icon,
+    Grid, 
+    GridItem,
+    Search ,
+    Sidebar, 
+    SidebarItem,
+    TreeSelect ,
+    DropdownMenu, 
+    DropdownItem,
+    Dialog ,
+    List,
+    Image as VanImage,
+    Overlay
+} from 'vant';
 import 'vant/lib/swipe/style';
 import 'vant/lib/icon/style';
 import 'vant/lib/nav-bar/style';
@@ -15,16 +39,22 @@ import 'vant/lib/button/style';
 import 'vant/lib/sticky/style';
 import 'vant/lib/calendar/style';
 import 'vant/lib/card/style';
-import 'vant/lib/pull-refresh/style';
+import 'vant/lib/grid/style';
+import 'vant/lib/search/style';
+import 'vant/lib/sidebar/style';
+import 'vant/lib/sidebar-item/style';
+import 'vant/lib/tree-select/style';
 import 'vant/lib/dropdown-menu/style';
 import 'vant/lib/dropdown-item/style';
+import 'vant/lib/dialog/style';
+import 'vant/lib/pull-refresh/style';
 import 'vant/lib/search/style';
 import 'vant/lib/list/style';
 import 'vant/lib/image/style';
 import 'vant/lib/overlay/style';
 
-
-
+Vue.use(Dialog);
+Vue.use(TreeSelect);
 Vue.use(Swipe);
 Vue.use(NavBar);
 Vue.use(SwipeItem);
@@ -37,6 +67,10 @@ Vue.use(Button);
 Vue.use(Sticky );
 Vue.use(Calendar);
 Vue.use(Card);
+Vue.use(Grid);
+Vue.use(GridItem);
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
 Vue.use(PullRefresh);
 Vue.use(DropdownMenu);
 Vue.use(DropdownItem);
