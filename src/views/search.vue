@@ -1,3 +1,5 @@
+2020-10-27 20:02:11
+
 <template>
   <div class="zb_box">
     <van-sticky>
@@ -46,52 +48,40 @@
 
 
 <script>
-  import appFooter from "../components/Footer";
-
-
-  export default {
-    // 组件名称
-    name: 'demo',
-    // 组件参数 接收来自父组件的数据
-    props: [],
-    // 局部注册的组件
-    components: {
-      appFooter
-     },
-    // 组件状态值
-    data() {
-      return {
-        active:3
-      }
-
+import appFooter from "../components/Footer";
+import { Toast } from "vant";
+export default {
+  // 组件名称
+  name: "demo",
+  // 组件参数 接收来自父组件的数据
+  props: [],
+  // 局部注册的组件
+  components: { appFooter },
+  // 组件状态值
+  data() {
+    return {
+      active: 0,
+      isLoading: false,
+    };
+  },
+  // 计算属性
+  computed: {},
+  // 侦听器
+  watch: {},
+  // 组件方法
+  methods: {
+    onRefresh() {
+      setTimeout(() => {
+        Toast("刷新成功");
+        this.isLoading = false;
+      }, 1000);
     },
-    // 计算属性
-    computed: {},
-    // 侦听器
-    watch: {},
-    // 组件方法
+  },
+  created() {},
+  mounted() {},
+};
+</script> 
 
-    methods: {},
-    // 以下是生命周期钩子   注：没用到的钩子请自行删除
-    /**
-    * 在实例初始化之后，组件属性计算之前，如data属性等
-    */
-    beforeCreate() {
-    },
-    /**
-    * 组件实例创建完成，属性已绑定，但DOM还未生成，$ el属性还不存在
-    */
-    created() {
-    },
-    mounted() {
-    },
-  }
-</script>
-
-<style scoped>
-
-
-</style>
 
 <style lang='scss' scoped>
 .zb_box {
@@ -128,16 +118,13 @@
     button {
       color: #fff;
       background: #eb6100;
-      width: 1.9rem;
+      width: 1.8rem;
       height: 0.6rem;
-      border-radius: .1rem;
-    font-size: 0.16rem;
-
+      border-radius: inherit;
     }
   }
   .van-pull-refresh {
     height: 100%;
-  }
+  } 
 }
 </style>
->>>>>>> 7c454feb7f9d21328cc54f84466b3059afded72e

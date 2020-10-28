@@ -27,7 +27,9 @@ export default {
 
     },
     methods: {
-
+      zqd_go(){
+        this.$router.go(-1)
+      }
     }
 };
 </script>

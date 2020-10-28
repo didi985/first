@@ -9,7 +9,8 @@
           </van-nav-bar>
           <!--  -->
           <van-tabs>
-            <van-tab v-for="(item,index) in zqd_arr" :title="item+'(0)'">
+            <van-tab v-for="(item,index) in zqd_arr" :title="item+'(0)'" :key="index">
+
               <!-- 内容 {{ index }} -->
               您还没有订课程
             </van-tab>
