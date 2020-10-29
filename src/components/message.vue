@@ -9,50 +9,14 @@
 
     <!-- 信息下面的布局 -->
     <ul class="zqd_ul">
-        <li>
+        <li v-for="(item,index) in zqd_arr" :key="index" @click="zqd_xiang(item.message_classify)">
             <p>
                 <!-- <van-icon name="credit-pay"  color="#2AC8B7" size="0.88rem" id="zqd"/> -->
-                <van-icon name="credit-pay" color="#2AC8B7" size="0.88rem" id="zqd"/>
+                <van-icon :name="item.name" color="#2AC8B7" size="0.88rem" id="zqd"/>
             </p>
             <div>
-                <span>课程通知</span>
-                <p>您报名的课程《李老师18号20号地理大课堂开课啦》已经有3天没有学习了，快去学习吧</p>
-            </div>
-        </li>
-        <li>
-            <p>
-                <van-icon name="credit-pay" color="#2AC8B7" size="0.88rem" id="zqd"/>
-            </p>
-            <div>
-                <span>系统通知</span>
-                <p>暂无消息</p>
-            </div>
-        </li>
-        <li>
-            <p>
-                <van-icon name="credit-pay" color="#2AC8B7" size="0.88rem" id="zqd"/>
-            </p>
-            <div>
-                <span>订单通知</span>
-                <p>您的课程订单《》取消成功</p>
-            </div>
-        </li>
-        <li>
-            <p>
-                <van-icon name="credit-pay" color="#2AC8B7" size="0.88rem" id="zqd"/>
-            </p>
-            <div>
-                <span>约课通知</span>
-                <p>暂无消息</p>
-            </div>
-        </li>
-        <li>
-            <p>
-                <van-icon name="credit-pay" color="#2AC8B7" size="0.88rem" id="zqd"/>
-            </p>
-            <div>
-                <span>考试通知</span>
-                <p>暂无消息</p>
+                <span>{{ item.kecheng }}</span>
+                <p>{{ item.title }}</p>
             </div>
         </li>
     </ul>
@@ -65,7 +29,44 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+        zqd_arr:[
+            {
+                name:'credit-pay',
+                kecheng:'课程通知',
+                title:'您报名的课程《李老师18号20号地理大课堂开课啦》已经有3天没有学习了，快去学习吧',
+                message_classify:'coures'
+            },
+            {
+                name:'credit-pay',
+                kecheng:'系统通知',
+                title:'暂无消息',
+                message_classify:'system'
+
+            },
+            {
+                name:'credit-pay',
+                kecheng:'订单通知',
+                title:'您的课程订单《》取消成功',
+                message_classify:'order'
+
+            },
+            {
+                name:'credit-pay',
+                kecheng:'约课通知',
+                title:'暂无消息',
+                message_classify:'oto'
+
+            },
+            {
+                name:'credit-pay',
+                kecheng:'考试通知',
+                title:'暂无消息',
+                message_classify:'exam'
+
+            },
+        ]
+    };
   },
   created() {
 
@@ -75,6 +76,15 @@ export default {
     zqd_go() {
       this.$router.go(-1);
     },
+    zqd_xiang(zqd){
+        // console.log(zqd)
+        this.$router.push({
+            path:'/message-detail',
+            query:{
+                zqd
+            }
+        })
+    }
   },
 };
 </script>

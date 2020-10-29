@@ -102,7 +102,6 @@
             <p class="tad-ren">
               <span  >134人已报名</span>
               <font >免费</font>
-
             </p>
         </div>
 
@@ -154,8 +153,8 @@
             </p>
         </div>
 </div>
-      
-      
+
+
 
 
 <!-- </van-list> -->
@@ -234,7 +233,7 @@ export default {
     // },
   }
 };
-</script> 
+</script>
 
 <style scoped>
 .van-nav-bar {

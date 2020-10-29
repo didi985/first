@@ -1,36 +1,31 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
     <frame />
+    <loading  v-if="$store.state.isshow"></loading>
   </div>
 </template>
 <script>
-import frame from './components/Frame'
-  export default {
-    components:{frame},
-      data() {
-         return {
+import frame from './components/Frame';
+import loading from './components/loading.vue';
+export default {
+  components: { frame,loading },
+  data() {
+    return {};
+  },
 
-         };
-      },
+  created() {},
+  mounted() {},
+  methods: {},
 
-      created() {
-
-      },
-      mounted() {
-
-      },
-      methods: {
-
-      }
-   };
+};
 </script>
 <style lang="scss">
-  html,body{
-    height: 100%;
-    font-size: 0.13rem;
-  }
-
+html,
+body {
+  height: 100%;
+  font-size: 0.13rem;
+}
 
 #nav {
   padding: 30px;

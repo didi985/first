@@ -20,6 +20,7 @@ instance.interceptors.request.use((config)=>{
     if (token ) { // 判断是否存在token，如果存在的话，则每个http header都加上token
         config.headers.authorization = token  //请求头加上token
     }
+    store.state.isshow=true
 
    //  store.state.islod=true
     return config
@@ -31,7 +32,7 @@ instance.interceptors.response.use((res)=>{
    //      window.sessionStorage.removeItem('token')
    //      router.push('/login')
    //  }
-   //  store.state.islod=false
+    store.state.isshow=false
     return res
 })
 

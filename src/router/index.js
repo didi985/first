@@ -178,6 +178,14 @@ const routes = [
       return import('../components/message.vue')
     }
   },
+  // 信息通知详情
+  {
+    path: '/message-detail',
+    name: 'message-detail',
+    component: function () {
+      return import('../components/message-detail.vue')
+    }
+  },
   // 意见反馈
   {
     path: '/feedback',
@@ -288,7 +296,8 @@ const routes = [
     path: '/error-list',
     name: 'error-list',
     component: () => import('../views/error-list.vue'),
-  }
+  },
+
 
 
 ]

@@ -4,15 +4,17 @@
       <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019pILfAg7Avr1567732916.png" alt="" />
     </div>
     <!-- 帐号密码登录 -->
-    <div v-show="zqd == 0">
+    <div v-show="zqd == 0" class="zqd_div1">
       <!-- 手机号 -->
-      <van-field v-model="zqd_deng1.mobile" type="tel" label="" placeholder="请输入手机号" />
+      <div>
+        <van-field v-model="zqd_deng1.mobile" type="tel" label="" placeholder="请输入手机号" />
+      </div>
       <!-- 密码 -->
       <van-field v-model="zqd_deng1.password" type="password" label="" placeholder="请输入密码" />
 
       <span class="zqd_sp1" @click="zqd_zhao">找回密码</span>
       <span class="zqd_sp2" @click="zqd_zhuce">注册/验证码登录</span>
-
+    <!-- 底部按钮 -->
       <van-button type="primary" id="zqd" @click="zqd_deng()">登录</van-button>
     </div>
 
@@ -29,11 +31,10 @@
 
       <span class="zqd_sp1">*未注册的手机号自动注册</span>
       <span class="zqd_sp2" @click="zqd = 0">使用密码登录</span>
-
+    <!-- 底部按钮 -->
       <van-button type="primary" id="zqd" @click="zqd_duanxindeng">登录</van-button>
     </div>
 
-    <!-- 底部按钮 -->
   </div>
 </template>
 
@@ -133,5 +134,17 @@ span {
   background: linear-gradient(90deg, #ff9045, #fc5500);
   color: #fff;
   font-size: 0.5rem;
+}
+.zqd_div1{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  input{
+    width: 100%;
+    height: 0.5rem;
+  }
+}
+.zqd_active{
+  
 }
 </style>
