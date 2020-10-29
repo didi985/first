@@ -30,7 +30,7 @@
       <p class="cxy_page"><span></span>名师阵容</p>
       <div class="cxy_content">
         <ul class="cxy_item">
-          <li @click="$router.push('/teacher')" v-for="(item,index) in HomeArr5.list" :key="index">
+          <li v-for="(item,index) in HomeArr5.list" @click="$router.push(`/teacher?id=${item.teacher_id}`)" :key="index">
             <div>
             <img :src="item.teacher_avatar" alt="">
             </div>
@@ -59,7 +59,8 @@
               </div>
               <div class="four">
                 <span>{{item.sales_num}}人报名</span>
-                <span>免费</span>
+                <span v-show="item.price==0">免费</span>
+                <span v-show="item.price==100"><img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20191HHDExgz0u1567065946.png" alt=""> 1.00</span>
               </div>
             </li>
           </ul>
@@ -82,7 +83,8 @@
               </div>
               <div class="four">
                 <span>{{item.sales_num}}人报名</span>
-                <span>免费</span>
+                <span v-show="item.price==0">免费</span>
+                <span v-show="item.price==100"> <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/20191HHDExgz0u1567065946.png" alt=""> 1.00</span>
               </div>
             </li>
           </ul>
@@ -156,7 +158,7 @@ export default {
      this.HomeArr2 = data.data[1]
      this.HomeArr4 = data.data[3]
      this.HomeArr5 = data.data[4]
-
+    console.log(data.data)
    }
   },
 };
@@ -317,7 +319,12 @@ export default {
         color: rgba(0,0,0,.45);
         font-size: 0.2rem;
         font-weight: 500;
-        
+        span{
+          img{
+            width: 0.24rem;
+            height: 0.24rem;
+          }
+        }
         :last-child{
           font-size: 0.3rem;
           color: #44a426;

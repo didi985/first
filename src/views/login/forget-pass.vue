@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <!-- 表头 -->
     <van-nav-bar title="找回密码" left-text="" left-arrow @click-left="zqd_go()">
       <template #right>
@@ -7,26 +7,30 @@
       </template>
     </van-nav-bar>
     <!-- 手机号 -->
-    <van-field v-model="zqd_gai.mobile" center clearable label="" placeholder="请输入手机号">
+  
+    <van-field :class="flag?'active':''" @focus="flag = !flag" @blur="flag = !flag" v-model="zqd_gai.mobile" center clearable label="" placeholder="请输入手机号">
+  
       <template #button>
-        <van-button size="small" type="primary" @click="zqd_fa">发送验证码</van-button>
+        <span @click="zqd_fa" class="fasong">发送验证码</span>
       </template>
     </van-field>
     <!-- 输入验证码 -->
-    <van-field v-model="zqd_gai.sms_code" type="tel" label="" placeholder="请输入验证码" />
+    <van-field :class="flag1?'active':''" @focus="flag1 = !flag1" @blur="flag1 = !flag1" v-model="zqd_gai.sms_code" type="tel" label="" placeholder="请输入验证码" />
     <!-- 输入密码 -->
-    <van-field v-model="zqd_gai.password" type="tel" label="" placeholder="请输入密码" />
+    <van-field :class="flag2?'active':''" @focus="flag2 = !flag2" @blur="flag2 = !flag2" v-model="zqd_gai.password" type="tel" label="" placeholder="请输入密码" />
 
     <van-button type="primary" id="zqd" @click="zqd_duanxindeng">确定</van-button>
   </div>
 </template>
 
 <script>
-import { posts } from '@/util/api';
-
+import { posts } from '@/util/api'
 export default {
   data() {
     return {
+      flag:false,
+      flag1:false,
+      flag2:false,
       zqd_gai:{
          mobile:'',
          password:'',
@@ -42,10 +46,16 @@ export default {
     },
     //  发送验证码
     async zqd_fa() {
-      let { data } = await posts('/api/app/smsCode', {
-        mobile: this.zqd_gai.mobile,
-        sms_type: 'getPassword',
-      });
+      if(this.zqd_gai.mobile==''){
+        this.$toast('手机号码格式不正确');
+        return
+      }else{
+        let { data } = await posts('/api/app/smsCode', {
+          mobile: this.zqd_gai.mobile,
+          sms_type: 'getPassword',
+        });
+      }
+      
       // console.log(data);
     },
     //  确定修改
@@ -53,11 +63,22 @@ export default {
       let { data } = await posts('/api/app/password',this.zqd_gai);
       console.log(data);
     },
+
   },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.box{
+  font-size: 0.12rem;
+  padding: 0.2rem;
+  .van-field{
+  font-size: 0.12rem;
+  }
+  .active{
+  border-bottom: 0.01rem solid #eb6100;
+  }
+}
 #zqd {
   width: 6.5rem;
   height: 1rem;
@@ -66,6 +87,10 @@ export default {
   border-radius: 0.5rem;
   background: linear-gradient(90deg, #ff9045, #fc5500);
   color: #fff;
-  font-size: 0.5rem;
+  font-size: 0.25rem;
+}
+.fasong{
+  color: #eb6100;
+  font-size: 0.12rem;
 }
 </style>

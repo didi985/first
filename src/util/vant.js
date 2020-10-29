@@ -5,12 +5,13 @@ import {
     Tabs, PullRefresh, Button, Sticky, Calendar, Card, Icon, DropdownMenu, Popup,
     DropdownItem, Search, List, Image as VanImage, Overlay, Dialog, TreeSelect, SidebarItem, Sidebar,
     Grid,
-    GridItem, Field,Checkbox, CheckboxGroup,Pagination
+    GridItem, Field,Checkbox, CheckboxGroup,Pagination,Toast ,CountDown
 } from 'vant';
 
 import 'vant/lib/index.css';
 
-
+Vue.use(CountDown);
+Vue.use(Toast);
 Vue.use(SidebarItem);
 Vue.use(Swipe);
 Vue.use(Sidebar);
