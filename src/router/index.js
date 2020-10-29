@@ -12,9 +12,14 @@ const routes = [
   // 默认首页
   {
     path: '/',
-    // name: 'Home',
-    // component: Home
     redirect: '/index',
+  },
+  // 登录
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/login/login.vue'),
+
   },
   // 首页
   {
@@ -27,6 +32,18 @@ const routes = [
     path: '/course',
     name: 'course',
     component: () => import('../components/Course.vue'),
+  },
+  // 会员课程
+  {
+    path: '/huiyuan',
+    name: 'huiyuan',
+    component: () => import('../components/huiyuan.vue'),
+  },
+  // 会员课程
+  {
+    path: '/yueke',
+    name: 'yueke',
+    component: () => import('../components/yueke.vue'),
   },
   // 约课记录
   {
@@ -223,7 +240,13 @@ const routes = [
     component: () => import('../views/oto-plan.vue'),
   },
   {
-    //题库选择 
+    path: '/oto',
+    name: 'oto',
+    component: () => import('../views/oto.vue'),
+  },
+  // 搜索
+  {
+    //题库选择
     path: '/point',
     name: 'point',
     component: () => import('../views/point.vue'),
@@ -234,6 +257,20 @@ const routes = [
     name: 'paper-package',
     component: () => import('../views/paper-package.vue'),
   },
+  // 找回密码
+  {
+    path: '/forget-pass',
+    name: 'forget-pass',
+    component: () => import('../views/login/forget-pass.vue'),
+  },
+   // 学习卡兑换
+   {
+    path: '/exchange',
+    name: 'exchange',
+    component: () => import('../components/exchange.vue'),
+  },
+
+
   {
     //仿真练习
     path: '/exam',
@@ -252,7 +289,7 @@ const routes = [
     name: 'error-list',
     component: () => import('../views/error-list.vue'),
   }
- 
+
 
 ]
 

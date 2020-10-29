@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import bus from '@/assets/bus'
 export default {
   name: "defaultDrag",
   data() {
@@ -65,12 +66,22 @@ export default {
 
   computed: {},
 
-  mounted() {},
+  mounted() {
+
+  },
+  created () {
+    // 接受布尔值，显示与隐藏
+    bus.$on('zqd',(res)=>{
+      // console.log(res)
+      this.show=res
+    })
+  },
 
   methods: {
     goNext() {
       this.$emit("goNext");
       this.show = true;
+
     },
     // 实现移动端拖拽
     down() {

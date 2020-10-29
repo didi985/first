@@ -79,14 +79,14 @@
           />
           <p>课程相关</p>
         </div>
-        <div>
+        <div @click="zqd_huiyuan">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA/CAYAAABaQWCYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0E2OTg2NEE3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0IxODFDMzI3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozQTY5ODY0ODc4NUExMUU5OEUyNEIzMTNEODYyODdENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozQTY5ODY0OTc4NUExMUU5OEUyNEIzMTNEODYyODdENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pmj6aEUAAAPISURBVHja7Jvba9RAFMYn2bS2tVpr641qq2jZKrRCffH6IL74oIgP6oOoz/ofCT5VFK1CBUEE3xQEQfFSvKEW66W13otSe9nN+n3mBENtu8mSTLbrHPhgs7vJzG/mzOTMmcTKHVKlWjXUBq2Rz0lZBnoLPYMm//mxt1D0Ak6JBfO8bugI1CkVScosqB86B92FcqVUthSrErgD0DqVvLVCj6CHcUEugWqgBZAt39EnpqBv0Ji0LntvQumxCSnPkuM6qJGNnT9s+d+58r9xuPD32SAJthnaLmNthYD6F3gDXYTuyLEVKDRp88ty5bhThkproCMIOAINAvw2ex2w40HIBug4xGlotRzXBcYae/IJdDMAbQcKSNr8snzIVdBuaFOgofPiZaPQQegSYHsAOkrIRTK2TkIb5yioNtAovOAgNAy1a4AclvLyAQ+snTarV4k3LpV5opnAAO1z5OAYlC1SUC7QkizsPnRZWq8hQUD2zDUpLx/wpGITUFa4bjkygLMhXc8NfH4PnYbOJuy2rjTk5Cz1mMvFydXoiLstDHFSYYaLT850g9ZgrtSnmJGr3e/JMMaJqAN6J61kpQDnN3SH1CeM/enJXMhWaYL2Q11lANkm9Qnz/1yUiGcxtA3aqtI3K8o84ES8cEbNQ7PVf2AG0kAaSANpIA2kgYwn4inIimNKc+pjeh0KskCuDluHKJBcvN6DXpVBgL4e2qK8pFuskB+gHuhqGXggV0MtSUAyGzakvLRk2jakIqRDo0DWy1pypAzGZJfUJ3ZILlL3KS+jl0kRMi9jsikJSGbkdikv+Zy2ZaKsbaMumh1V+v6JCQYMpOaIJ6/+ZrGTnHhcGXNOHOVEjXgeBCKeJL2Au1HLoT3KyxJqg/wi0c4NDWEdY2Rm9rt1Q/5U3m5vv6ah9FF5eyBaxyQ3ZLkv2KgBkON/rYrpgYsokNx55kbtDg3uyq0L7jMu0w3JiGen8rYJkg7pXKlbjW5IO65CTTBgIA1kbPfJF8p7ViDt9WSLBAv1cUPy5szn264rL1uWhhdw1mW2cC90KglIRh8vocdl4IEbokRDdsRWHCuTYTamwj3mErknuSo4qrwkUtrWKfWJHXIldMLcQgykgTSQBjIkpFXhjJYtYVIl25QtMWm+QgEZFX0i5Gvl7fdVovHNoAG/J7myGKkwQD583AcNE5KZcW6Tn2fXVgggOS4I0w9HJp6n0Bnos/JegGmWuNadR2DssJww8HWnK5newsD0AJ2gfPeC+U4+hV+jSngvKuUsB/dQnkNfoV/+D78FGADRWs3WD0AWEgAAAABJRU5ErkJggg=="
             alt=""
           />
           <p>会员相关</p>
         </div>
-        <div>
+        <div @click="zqd_yueke1">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA/CAYAAABaQWCYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0E2OTg2NEE3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0IxODFDMzI3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozQTY5ODY0ODc4NUExMUU5OEUyNEIzMTNEODYyODdENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozQTY5ODY0OTc4NUExMUU5OEUyNEIzMTNEODYyODdENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pmj6aEUAAAPISURBVHja7Jvba9RAFMYn2bS2tVpr641qq2jZKrRCffH6IL74oIgP6oOoz/ofCT5VFK1CBUEE3xQEQfFSvKEW66W13otSe9nN+n3mBENtu8mSTLbrHPhgs7vJzG/mzOTMmcTKHVKlWjXUBq2Rz0lZBnoLPYMm//mxt1D0Ak6JBfO8bugI1CkVScosqB86B92FcqVUthSrErgD0DqVvLVCj6CHcUEugWqgBZAt39EnpqBv0Ji0LntvQumxCSnPkuM6qJGNnT9s+d+58r9xuPD32SAJthnaLmNthYD6F3gDXYTuyLEVKDRp88ty5bhThkproCMIOAINAvw2ex2w40HIBug4xGlotRzXBcYae/IJdDMAbQcKSNr8snzIVdBuaFOgofPiZaPQQegSYHsAOkrIRTK2TkIb5yioNtAovOAgNAy1a4AclvLyAQ+snTarV4k3LpV5opnAAO1z5OAYlC1SUC7QkizsPnRZWq8hQUD2zDUpLx/wpGITUFa4bjkygLMhXc8NfH4PnYbOJuy2rjTk5Cz1mMvFydXoiLstDHFSYYaLT850g9ZgrtSnmJGr3e/JMMaJqAN6J61kpQDnN3SH1CeM/enJXMhWaYL2Q11lANkm9Qnz/1yUiGcxtA3aqtI3K8o84ES8cEbNQ7PVf2AG0kAaSANpIA2kgYwn4inIimNKc+pjeh0KskCuDluHKJBcvN6DXpVBgL4e2qK8pFuskB+gHuhqGXggV0MtSUAyGzakvLRk2jakIqRDo0DWy1pypAzGZJfUJ3ZILlL3KS+jl0kRMi9jsikJSGbkdikv+Zy2ZaKsbaMumh1V+v6JCQYMpOaIJ6/+ZrGTnHhcGXNOHOVEjXgeBCKeJL2Au1HLoT3KyxJqg/wi0c4NDWEdY2Rm9rt1Q/5U3m5vv6ah9FF5eyBaxyQ3ZLkv2KgBkON/rYrpgYsokNx55kbtDg3uyq0L7jMu0w3JiGen8rYJkg7pXKlbjW5IO65CTTBgIA1kbPfJF8p7ViDt9WSLBAv1cUPy5szn264rL1uWhhdw1mW2cC90KglIRh8vocdl4IEbokRDdsRWHCuTYTamwj3mErknuSo4qrwkUtrWKfWJHXIldMLcQgykgTSQBjIkpFXhjJYtYVIl25QtMWm+QgEZFX0i5Gvl7fdVovHNoAG/J7myGKkwQD583AcNE5KZcW6Tn2fXVgggOS4I0w9HJp6n0Bnos/JegGmWuNadR2DssJww8HWnK5newsD0AJ2gfPeC+U4+hV+jSngvKuUsB/dQnkNfoV/+D78FGADRWs3WD0AWEgAAAABJRU5ErkJggg=="
             alt=""
@@ -136,7 +136,7 @@
           />
           <p>意见反馈</p>
         </div>
-        <div>
+        <div @click="zqd_show">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAABCCAYAAAACPxW5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0ZFNDExODA3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0ZFNDExODE3ODVBMTFFOThFMjRCMzEzRDg2Mjg3RDUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozRjBCMUQ0RDc4NUExMUU5OEUyNEIzMTNEODYyODdENSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozRjBCMUQ0RTc4NUExMUU5OEUyNEIzMTNEODYyODdENSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PscB5iUAAAPzSURBVHja7JvZS1RhGIe/WZzMckmd1Cwz93FKRy2hKLIdW8AWC6JokfoP6t/oKqK8C1qkqG66aaGu6qIuinaKdoKCFlpFJqff2/yESfTMeJaZc07zwoOg54znOd/2nu+844kda1YWhxfkgnxQx5/vwRvwAwyCmO5P3/dA889+ZX00gsUgBKoo+xW8A/fANfDaqn9upeBkMB9sAmsoODrugEowAJ4bask0C0q3bAUHwXKQN85xEVACpoHD4JXZkl6LBOeAteyaeUmOnQU2gtUgaMWdtiKk9daDghSPr+HxjU4RlFZpmcDnezhea50iKC3nm+A55ZxwbDvJVLAVpLst1XG+tOIq8AncBQ/Bl0wL+ijURLlFHEd6J4uFYAa4zSXkCZCV/FkmBAso1QO6wUwQMNjt5fx6zsI9TAYughNMCn6lS7AabCZyQaUWDB0/J53toA2cBmfBB6sFG8AO0MuuaXXIzVsCCkEROMMuG7NCUJLlPWAXJ5V0RgvH9lRwlFmPqctEFbvL3gzIJc7U8v/XUdQ0QUm3NoCdYLrKbJSxB3Wncv3eFLtxO2e1OmWP6OQE16D6wz6jgkEmw/OUvaKdXbXIqKBM1SutyPQNRjW7aaURwTJmJ9UW5q16I4fLVBjddIpewSY+0+Uqe4bs73RotWIywQrmlgGbCuYxy5mtV7CEOaZdQ2b4Zq1r9CZ5UihMYcsh0xHkdU5YMF/rRBuFT+vhWkuweAJ7KpkOjx7BSTaeXEZHTI/gMHF0eJXLIyuYFcwKZgWzglnBrOB/KhgFvx3iEdUj6NHK0t3wNCEFAiGHCHao/nAkVUEp/1ih4tv0EYcILgN9kAyBf5z8YwjLLtoBFX+jk+sQQXlp2svnwiPg0XgtKG9Yd4MuB8mNjEHZw90CtqEV68cSlGIc2QqXqqQch64Kss25Vcm7/v5wIFEwwFYTShy+9IXYUBEZjyOC5TRvc8n63snuGhRB2VyaCxY4bNxpRSl7Y4WXM5C8YCl2WZYmu92tIljL2TPfZYKyad3lpWlYpac4Np0hw61BBIu4hrjxQaLOz9X/uwsF/z4siKCUSw3QOOoiQUlWoiJ4Czyl4LCLBOWN07AIvnS0RpKvFWT3ZJweZq59stxIsVC9wZTvJ3is4oWw3+wkWKDiJcn7Da6rb8Eh8MIMQTO7qNRXS4mj0Z24IT6Rf7bbGJS7fVPFC8r1hhSkX1Xxeu0huwnG2K0ugPs6P0OK0c+Dj3adRaVo/BQ4zrGU6veQopxY5OZcN6v1zJ5kEruqVMnLdwP7VLzsUSvkuEvgHLiidFTWp1tQMb89SVnZhqzhtogvIR0c5HGyHFwGN/g7U+OPAAMAxBGWEJmEQzMAAAAASUVORK5CYII="
             alt=""
@@ -161,10 +161,12 @@
 
 <script>
 import Foot from '@/components/Footer.vue';
+import bus from '@/assets/bus';
 export default {
   data() {
     return {
       active: 5,
+      show: null,
     };
   },
   created() {},
@@ -198,34 +200,50 @@ export default {
     zqd_kecheng() {
       this.$router.push('/order');
     },
+    // 会员的
+    zqd_huiyuan(){
+      this.$router.push('/huiyuan')
+    },
+     // 约课的
+    zqd_yueke1(){
+      this.$router.push('/yueke')
+    },
     // 优惠券
-    zqd_you(){
-      this.$router.push('/coupon')
+    zqd_you() {
+      this.$router.push('/coupon');
     },
     // 学习卡跳转
-    zqd_xue(){
-      this.$router.push('/card')
+    zqd_xue() {
+      this.$router.push('/card');
     },
     // 跳转会员
-    zqd_vip(){
-      this.$router.push('/vip')
+    zqd_vip() {
+      this.$router.push('/vip');
     },
     // 跳转信息
-    zqd_message(){
-      this.$router.push('/message')
+    zqd_message() {
+      this.$router.push('/message');
     },
     // 意见反馈
-    zqd_feedback(){
-      this.$router.push('/feedback')
+    zqd_feedback() {
+      this.$router.push('/feedback');
     },
-   //  跳转设置
-    zqd_options(){
-       this.$router.push('/options')
+    //  跳转设置
+    zqd_options() {
+      this.$router.push('/options');
     },
-   //  去约课
-   zqd_yueke(){
-      this.$router.push('/oto')
-   }
+    //  去约课
+    zqd_yueke() {
+      this.$router.push('/oto');
+    },
+    //  客服
+    zqd_show() {
+      // 发送一个布尔值
+      this.show = true;
+      // console.log(this.show)
+      bus.$emit('zqd', this.show);
+    },
+
   },
   components: {
     Foot,
@@ -397,4 +415,3 @@ export default {
   height: 1rem;
 }
 </style>
-
