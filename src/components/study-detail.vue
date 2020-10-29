@@ -81,12 +81,17 @@
 
     <!-- 弹出层 -->
   <van-popup v-model="show">
-      <div class="xing">
-          <span>星级：</span>
-         <van-icon name="star"  size="0.3rem" />
-          <van-icon name="star"  size="0.3rem" />
-           <van-icon name="star"  size="0.3rem" />
-      </div>
+      <!-- <div class="xing">
+          <span>星级：</span> -->
+
+    <van-field name="rate"  label="星级：">
+  <template #input>
+    <van-rate v-model="rate" />
+  </template>
+</van-field>
+
+
+      
       <div class="nei">
            <span>内容：</span>
            <textarea type="text"></textarea>
@@ -121,7 +126,8 @@ export default {
   data () {
    return {
     //    遮罩层
-        show: false
+        show: false,
+         rate: 3,
    }
   },
   name: 'demo',

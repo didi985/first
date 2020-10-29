@@ -39,7 +39,10 @@ import 'vant/lib/tree-select/style';
 import 'vant/lib/sidebar-item/style';
 import 'vant/lib/dropdown-menu/style';
 import 'vant/lib/dropdown-item/style';
+import 'vant/lib/form/style';
+import { Form } from 'vant';
 
+Vue.use(Form);
 
 Vue.use(SidebarItem);
 Vue.use(Swipe);
