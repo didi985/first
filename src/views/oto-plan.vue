@@ -4,7 +4,7 @@
       <van-icon name="arrow-left" @click="$router.go(-1)" />
       <h3>预约课程</h3>
     </header>
-    <div class="zb_otItem" @click="$router.push('/oto-plan')">
+    <div class="zb_otItem" >
       <van-image
         round
         width=".8rem"

@@ -3,9 +3,10 @@
     <!-- 表头 -->
     <van-nav-bar title="我的学习卡" left-text="" left-arrow @click-left="zqd_go()">
       <template #right>
-        <span class="zqd_sp1">学习卡兑换</span>
+        <span class="zqd_sp1" @click="zqd_exchange">学习卡兑换</span>
       </template>
     </van-nav-bar>
+    暂无记录
   </div>
 </template>
 
@@ -20,6 +21,10 @@ export default {
     zqd_go() {
       this.$router.go(-1);
     },
+    // 跳转学习卡兑换
+    zqd_exchange(){
+      this.$router.push('/exchange')
+    }
   },
 };
 </script>

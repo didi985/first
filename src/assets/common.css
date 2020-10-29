@@ -13,7 +13,7 @@
     height: 100%;
  }
 
- /* .zqd_ul .van-nav-bar__text {
+ .zqd_ul .van-nav-bar__text {
     color: #000 !important;
     font-size: 0.12rem;
  }
@@ -24,9 +24,9 @@
 
  .zb_box .van-dropdown-menu__bar {
     height: .84rem !important;
- } */
+ }
 
- 
+
 
  .zb_box .van-tabs {
     height: .0rem;
