@@ -296,6 +296,12 @@ const routes = [
     name: 'forget-pass',
     component: () => import('../views/login/forget-pass.vue'),
   },
+   // 设置密码
+   {
+    path: '/new',
+    name: 'new',
+    component: () => import('../views/login/new.vue'),
+  },
    // 学习卡兑换
    {
     path: '/exchange',

@@ -81,6 +81,7 @@
 
 <script>
    import Head from '@/components/Header.vue'
+   import { gets } from '../util/api'
 export default {
     data() {
         return {
@@ -90,11 +91,12 @@ export default {
     created() {
 
     },
-    mounted() {
-
+   async mounted() {
+      let {data} = await gets('/api/app/userInfo')
+        console.log(data)
     },
     methods: {
-
+        
     },
     components: {
       Head

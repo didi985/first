@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="zqd_login">
-      <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019pILfAg7Avr1567732916.png" alt="" />
+      <img
+        src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019pILfAg7Avr1567732916.png"
+        alt=""
+      />
     </div>
     <!-- 帐号密码登录 -->
     <div v-show="zqd == 0" class="zqd_div1">
@@ -22,6 +25,7 @@
       <!-- 底部按钮 -->
       <van-button type="primary" id="zqd" @click="zqd_deng()">登录</van-button>
     </div>
+
 
     <!-- 验证码注册登录 -->
     <div v-show="zqd == 1" class="zqd_div1">
@@ -50,6 +54,7 @@
   </div>
 </template>
 
+
 <script>
 import { posts } from '@/util/api';
 import { Toast } from 'vant';
@@ -61,16 +66,18 @@ export default {
       input2: false, //判断input高亮
       zqd_show: true, //判断验证码一分钟
       zqd: 0,
+      yanzheng:true,
+      times:60,
       //   登录
       zqd_deng1: {
-        mobile: '',
-        password: '',
+        mobile: "",
+        password: "",
         type: 1,
       },
       //验证码注册
       zqd_yan: {
-        mobile: '',
-        sms_code: '',
+        mobile: "",
+        sms_code: "",
         client: 1,
         type: 2,
       },
@@ -119,8 +126,25 @@ export default {
     },
     // 短信登
     async zqd_duanxindeng() {
-      let { data } = await this.$http.post('http://120.53.31.103:84/api/app/login', this.zqd_yan);
-      console.log(data);
+      // this.$router.push('/person')
+      let { data } = await this.$http.post(
+        "http://120.53.31.103:84/api/app/login",
+        this.zqd_yan
+      );
+      if(data.msg=='操作成功'){
+        localStorage.setItem("token", data.data.remember_token);
+      }
+      if(data.data.is_new==1){
+      this.$router.push('/new')
+      }else{
+      this.$router.push('/info')
+      }
+
+      // console.log(data);
+    },
+    //  跳转找回密码
+    zqd_zhao() {
+      this.$router.push("/forget-pass");
     },
     //  跳转找回密码
     zqd_zhao() {
@@ -130,6 +154,7 @@ export default {
 
 };
 </script>
+
 
 <style scoped lang="scss">
 .zqd_login {
