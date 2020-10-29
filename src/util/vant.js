@@ -7,7 +7,7 @@ import { NavBar,Swipe,SwipeItem,Tabbar, TabbarItem,Tab,
 
      DropdownItem,Search,List,Image as VanImage,Overlay,Dialog,TreeSelect ,SidebarItem,Sidebar,
      Grid, 
-     GridItem} from 'vant';
+     GridItem,Checkbox, CheckboxGroup,Pagination } from 'vant';
 
 import 'vant/lib/swipe/style';
 import 'vant/lib/icon/style';
@@ -34,6 +34,9 @@ import 'vant/lib/list/style';
 import 'vant/lib/popup/style';
 import 'vant/lib/image/style';
 import 'vant/lib/overlay/style';
+import 'vant/lib/checkbox/style';
+import 'vant/lib/checkbox-group/style';
+import 'vant/lib/pagination/style';
 
 Vue.use(Swipe);
 Vue.use(NavBar);
@@ -61,6 +64,8 @@ Vue.use(Overlay );
 Vue.use(Popup);
 Vue.use(Dialog);
 Vue.use(TreeSelect);
-
+Vue.use(Checkbox);
+Vue.use(Pagination);
+Vue.use(CheckboxGroup);
 
 
