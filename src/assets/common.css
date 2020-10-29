@@ -26,6 +26,10 @@
     height: .84rem !important;
  }
 
+input {
+  border: none;
+  outline: none;
+}
 
 
  .zb_box .van-tabs {

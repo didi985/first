@@ -11,7 +11,7 @@
 
       <div class="tad-sou" v-show="flog">
         <van-icon name="arrow-left" @click="fan" size="0.4rem" />
-        
+
         <a class="san" @click="jie" href="#box1">课程介绍</a>
         <span class="san" @click="da">课程大纲</span>
         <span class="san" @click="ping">课程评价</span>
@@ -88,8 +88,9 @@
         </div>
       </div>
       <!-- 课程评论 -->
-      <div class="tad-tu2 tu3">
-        
+
+      <div class="tad-tu2 tu3">  
+
         <p>课程评论</p>
         <ul v-for="(item,index) in list3" :key="index">
           <li>
@@ -235,7 +236,7 @@ export default {
 
   }
 };
-</script> 
+</script>
 
 <style scoped lang="scss">
 .xiangqing {

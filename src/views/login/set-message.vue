@@ -7,7 +7,7 @@
             <van-nav-bar  left-text="头像" right-arrow>
                <template #right>
                  <!-- <van-icon name="search" size="18" /> -->
-                 <img src="../assets/logo.png" alt="">
+                 <img src="" alt="">
                  <van-icon name="arrow" size="18" />
                </template>
              </van-nav-bar>
@@ -81,7 +81,6 @@
 
 <script>
    import Head from '@/components/Header.vue'
-   import { gets } from '../util/api'
 export default {
     data() {
         return {
@@ -91,12 +90,11 @@ export default {
     created() {
 
     },
-   async mounted() {
-      let {data} = await gets('/api/app/userInfo')
-        console.log(data)
+    mounted() {
+
     },
     methods: {
-        
+
     },
     components: {
       Head

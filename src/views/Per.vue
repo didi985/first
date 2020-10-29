@@ -1,5 +1,13 @@
 <template>
   <div calss="zqd">
+    <div class="zqd_aa">
+      <img src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2020ZOIaYY0vYI1603938429.png" alt=""
+    class="zqd_img1"
+    v-show="zqd_show1"
+    @click="zqd_chulai"
+    >
+    </div>
+
     <div class="zqd_bei">
       <!-- 这个是后面的背景颜色 -->
     </div>
@@ -40,7 +48,7 @@
           alt=""
         />
       </div>
-      <div class="zqd_center">
+      <div class="zqd_center" @click="zqd_xianshi">
         <p>邀请好友注册APP，享多重好礼</p>
         <p>限时特惠，多邀多得</p>
       </div>
@@ -162,15 +170,20 @@
 <script>
 import Foot from '@/components/Footer.vue';
 import bus from '@/assets/bus';
+import {gets} from '../util/api'
 export default {
   data() {
     return {
       active: 5,
-      show: null,
+      show: null,         //消息显示
+      zqd_show1:false,    //图片默认隐藏
     };
   },
   created() {},
-  mounted() {},
+  async mounted() {
+      let {data} =await gets('/api/app/myStudy/2')
+      console.log(data)
+  },
   methods: {
     // 跳转个人信息
     zqd_ge() {
@@ -243,6 +256,14 @@ export default {
       // console.log(this.show)
       bus.$emit('zqd', this.show);
     },
+    // 图片显示
+    zqd_xianshi(){
+      this.zqd_show1=true
+    },
+    //点击隐藏
+    zqd_chulai(){
+      this.zqd_show1=false
+    }
 
   },
   components: {
@@ -254,6 +275,20 @@ export default {
 <style scoped>
 .zqd {
   position: relative;
+}
+/* 隐藏的图片 */
+.zqd_img1{
+  position: absolute;
+  width: 6.7rem;
+  height: 11rem;
+  margin-left: 0.4rem;
+  margin-top: 0.4rem;
+  z-index: 1000;
+}
+.zqd_aa{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
 }
 
 /* 背景布局 */

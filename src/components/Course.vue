@@ -20,21 +20,21 @@
         <van-dropdown-item title="分类" ref="item">
           <div class="tad-yi">
 
-          
+
                <p class="tad-nian">年级</p>
             <div class="tad-he">
               <span v-for="(ao,dong) in attrclassify[0].child" :key="dong" @click="ke(ao.id)" :class="ao.id===fen?'tad-he1':''">{{ao.name}}</span>
             </div>
-        
-           
+
+
 
    <p class="tad-nian">学科</p>
             <div class="tad-he">
               <span v-for="(ao,dong) in attrclassify[1].child" :key="dong" @click="ke1(ao.id)" :class="ao.id===fen1?'tad-he1':''">{{ao.name}}</span>
             </div>
 
-           
-            
+
+
             <div class="tad-niu">
               <button color="#7232dd" class="tad-b1" @click="chong">重置</button>
               <button color="#7232dd" class="tad-b2" @click="queding">确定</button>
@@ -76,6 +76,27 @@
 
 
       <div class="tad-nei">
+        <div class="tad-dan" @click="danxiang">
+            <p class="tad-p1">李老师课堂开课了快来看看</p>
+            <div class="tad-sj">
+              <p>
+                 <van-icon name="aim" />
+                03月16日 18:30 ~ 03月22日 15:00
+                <van-icon name="down" />
+                </p>
+              <p>共8课时</p>
+            </div>
+            <div class="tad-tu">
+              <div>
+                <img src='../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png' alt="">
+                <font>李青</font>
+              </div>
+            </div>
+            <p class="tad-ren">
+              <span  >134人已报名</span>
+              <font >免费</font>
+            </p>
+        </div>
 
         <div class="tad-dan"  v-for="(item,index) in list" :key="index" @click="danxiang(item.teachers_list[0].course_basis_id)">
             <p class="tad-p1">{{item.title}}</p>
@@ -98,7 +119,7 @@
             </div>
             <p class="tad-ren">
               <span  >{{item.brows_num}}人已报名</span>
-              
+
               <font v-if="item.price==0" class="mf">免费</font>
               <font v-if="item.price!=0" class="fk">
                 <img src="../../public/img/a1f37d1be616ee3adf3baa7bb806bea3_03.jpg" alt="">
@@ -108,13 +129,13 @@
         </div>
 
 
-       
 
 
-        
+
+
 </div>
-      
-      
+
+
 
 
 <!-- </van-list> -->
@@ -135,7 +156,7 @@ import Footer from '../components/Footer'
 
 
 export default {
-  
+
 
   data() {
     return {
@@ -215,14 +236,14 @@ export default {
 
     };
   },
-  
+
   name: "demo",
   props: {},
   mounted() {
     this.fun()
     this.fun1()
   },
-  
+
   // 计算属性
   computed: {},
   components: {
@@ -243,7 +264,7 @@ export default {
     },
 
 
-    
+
 
     // 搜索按钮
     onClickRight() {
@@ -325,7 +346,7 @@ export default {
     // },
   }
 };
-</script> 
+</script>
 
 <style scoped>
 .van-nav-bar {
@@ -410,7 +431,7 @@ export default {
 .tad-san .active{
 
    color: #EF8133;
-   
+
 }
 .tad-nei {
   background-color: #f0f2f5;

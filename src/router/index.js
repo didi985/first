@@ -12,14 +12,31 @@ const routes = [
   // 默认首页
   {
     path: '/',
-    redirect: '/index',
+    redirect: '/login',
   },
-  // 登录
+  // 密码登录
   {
     path: '/login',
     name: 'login',
     component: () => import('../views/login/login.vue'),
-
+  },
+  // 验证码登录
+  {
+    path: '/set-pass',
+    name: 'set-pass',
+    component: () => import('../views/login/set-pass.vue'),
+  },
+  // 设置密码
+  {
+    path: '/sms-login',
+    name: 'sms-login',
+    component: () => import('../views/login/sms-login.vue'),
+  },
+  // 设置信息
+  {
+    path: '/set-message',
+    name: 'set-message',
+    component: () => import('../views/login/set-message.vue'),
   },
   // 首页
   {
@@ -61,6 +78,14 @@ const routes = [
     path: '/person',
     name: 'Per',
     component: () => import('../views/Per.vue'),
+    beforeEnter:(to,from,next)=>{
+      let zqd_token=localStorage.getItem('token')
+      if(zqd_token){
+        next()
+      }else{
+        next('/login')
+      }
+    }
 
   },
   // 我的
@@ -178,6 +203,14 @@ const routes = [
       return import('../components/message.vue')
     }
   },
+  // 信息通知详情
+  {
+    path: '/message-detail',
+    name: 'message-detail',
+    component: function () {
+      return import('../components/message-detail.vue')
+    }
+  },
   // 意见反馈
   {
     path: '/feedback',
@@ -263,6 +296,12 @@ const routes = [
     name: 'forget-pass',
     component: () => import('../views/login/forget-pass.vue'),
   },
+   // 设置密码
+   {
+    path: '/new',
+    name: 'new',
+    component: () => import('../views/login/new.vue'),
+  },
    // 学习卡兑换
    {
     path: '/exchange',
@@ -288,7 +327,8 @@ const routes = [
     path: '/error-list',
     name: 'error-list',
     component: () => import('../views/error-list.vue'),
-  }
+  },
+
 
 
 ]

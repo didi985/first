@@ -7,7 +7,7 @@
       </template>
     </van-nav-bar>
          <!-- 设置密码 -->
-    <van-nav-bar title="" left-text="设置密码" >
+    <van-nav-bar title="" left-text="设置密码" @click-left="$router.push('/set-pass')">
       <template #right>
          <van-icon name="arrow" />
       </template>
