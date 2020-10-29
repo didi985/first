@@ -6,6 +6,7 @@
   :show-confirm="false"
   :style="{ height: '500px' }"
 />
+<button @click="onClickLeft">返回</button>
 </div>
 </template>
 
@@ -26,7 +27,11 @@ export default {
   // 侦听器
   watch: {},
   // 组件方法
-  methods: {},
+  methods: {
+    onClickLeft(){
+      this.$router.back()
+    }
+  },
 }
 </script> 
 

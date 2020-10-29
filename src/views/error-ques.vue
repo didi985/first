@@ -26,7 +26,7 @@
     <el-card v-show="!flag">
         <div class="cxy_one"><p>物理学史</p><span>7道错题</span></div>
         <div class="cxy_two"><p>提交时间：2020/10/28 15:16:53</p></div>
-        <div class="cxy_three"><van-button color="#7232dd" round plain size="small">巩固错题</van-button></div>   
+        <div class="cxy_three"><van-button color="#7232dd" round plain size="small" @click="$router.push('/error-list')">巩固错题</van-button></div>   
     </el-card>
     <p class="mei">没有更多了</p>
 </div>

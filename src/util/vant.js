@@ -12,7 +12,6 @@ import {
 
 import 'vant/lib/swipe/style';
 import 'vant/lib/swipe-item/style';
-
 import 'vant/lib/icon/style';
 import 'vant/lib/nav-bar/style';
 import 'vant/lib/tabbar/style';
