@@ -12,14 +12,31 @@ const routes = [
   // 默认首页
   {
     path: '/',
-    redirect: '/index',
+    redirect: '/login',
   },
-  // 登录
+  // 密码登录
   {
     path: '/login',
     name: 'login',
     component: () => import('../views/login/login.vue'),
-
+  },
+  // 验证码登录
+  {
+    path: '/set-pass',
+    name: 'set-pass',
+    component: () => import('../views/login/set-pass.vue'),
+  },
+  // 设置密码
+  {
+    path: '/sms-login',
+    name: 'sms-login',
+    component: () => import('../views/login/sms-login.vue'),
+  },
+  // 设置信息
+  {
+    path: '/set-message',
+    name: 'set-message',
+    component: () => import('../views/login/set-message.vue'),
   },
   // 首页
   {
@@ -61,6 +78,14 @@ const routes = [
     path: '/person',
     name: 'Per',
     component: () => import('../views/Per.vue'),
+    beforeEnter:(to,from,next)=>{
+      let zqd_token=localStorage.getItem('token')
+      if(zqd_token){
+        next()
+      }else{
+        next('/login')
+      }
+    }
 
   },
   // 我的

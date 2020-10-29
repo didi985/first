@@ -5,44 +5,61 @@
     </div>
     <!-- 帐号密码登录 -->
     <div v-show="zqd == 0" class="zqd_div1">
-      <!-- 手机号 -->
       <div>
-        <van-field v-model="zqd_deng1.mobile" type="tel" label="" placeholder="请输入手机号" />
+        <!-- 手机号 -->
+        <div :class="input1 ? 'zqd_active' : ''">
+          <van-field v-model="zqd_deng1.mobile" type="tel" label="" placeholder="请输入手机号" @focus="input1 = true" @blur="input1 = false" />
+        </div>
+        <!-- 密码 -->
+        <div :class="input2 ? 'zqd_active' : ''">
+          <van-field v-model="zqd_deng1.password" type="password" label="" placeholder="请输入密码" @focus="input2 = true" @blur="input2 = false" />
+        </div>
       </div>
-      <!-- 密码 -->
-      <van-field v-model="zqd_deng1.password" type="password" label="" placeholder="请输入密码" />
-
-      <span class="zqd_sp1" @click="zqd_zhao">找回密码</span>
-      <span class="zqd_sp2" @click="zqd_zhuce">注册/验证码登录</span>
-    <!-- 底部按钮 -->
+      <div class="sp">
+        <span class="zqd_sp1" @click="zqd_zhao">找回密码</span>
+        <span class="zqd_sp2" @click="zqd_zhuce">注册/验证码登录</span>
+      </div>
+      <!-- 底部按钮 -->
       <van-button type="primary" id="zqd" @click="zqd_deng()">登录</van-button>
     </div>
 
     <!-- 验证码注册登录 -->
-    <div v-show="zqd == 1">
+    <div v-show="zqd == 1" class="zqd_div1">
       <!-- 手机号 -->
-      <van-field v-model="zqd_yan.mobile" center clearable label="" placeholder="请输入手机号">
-        <template #button>
-          <van-button size="small" type="primary" @click="zqd_fa">发送验证码</van-button>
-        </template>
-      </van-field>
-      <!-- 验证码 -->
-      <van-field v-model="zqd_yan.sms_code" type="password" label="" placeholder="请输入短信验证码" />
+      <div :class="input1 ? 'zqd_active' : ''">
+        <van-field v-model="zqd_yan.mobile" center clearable label="" placeholder="请输入手机号" @focus="input1 = true" @blur="input1 = false">
+          <template #button>
+            <span @click="zqd_fa" v-show="zqd_show">获取验证码</span>
 
-      <span class="zqd_sp1">*未注册的手机号自动注册</span>
-      <span class="zqd_sp2" @click="zqd = 0">使用密码登录</span>
-    <!-- 底部按钮 -->
+            <p @click="zqd_fa" id="qq" v-show="!zqd_show">获取验证码 (<van-count-down :time="time" format="ss" id="qq" />)</p>
+          </template>
+        </van-field>
+      </div>
+      <!-- 验证码 -->
+      <div :class="input2 ? 'zqd_active' : ''">
+        <van-field v-model="zqd_yan.sms_code" type="password" label="" placeholder="请输入短信验证码" @focus="input2 = true" @blur="input2 = false" />
+      </div>
+      <div class="sp">
+        <span class="zqd_sp1">*未注册的手机号自动注册</span>
+        <span class="zqd_sp2" @click="zqd = 0">使用密码登录</span>
+      </div>
+      <!-- 底部按钮 -->
       <van-button type="primary" id="zqd" @click="zqd_duanxindeng">登录</van-button>
     </div>
-
+    <!-- <van-count-down :time="time" /> -->
   </div>
 </template>
 
 <script>
-import {posts} from '@/util/api'
+import { posts } from '@/util/api';
+import { Toast } from 'vant';
 export default {
   data() {
     return {
+      time: 60 * 1000,
+      input1: false, //判断input高亮
+      input2: false, //判断input高亮
+      zqd_show: true, //判断验证码一分钟
       zqd: 0,
       //   登录
       zqd_deng1: {
@@ -59,17 +76,20 @@ export default {
       },
     };
   },
-  created() {},
+  created() {
+    // console.log(this.time)
+  },
   mounted() {},
   methods: {
     //   z帐号密码登录
     async zqd_deng() {
-      let { data } = await this.$http.post('http://120.53.31.103:84/api/app/login', this.zqd_deng1);
-      console.log(data.msg);
-      console.log('123')
-      if(data.msg=="操作成功"){
-         localStorage.setItem('token',data.data.remember_token)
-         this.$router.push('/person')
+      let {data} = await posts('/api/app/login',this.zqd_deng1)
+      // console.log(data)
+      if (data.msg == '操作成功') {
+        localStorage.setItem('token', data.data.remember_token);
+        this.$router.push('/person');
+      }else{
+        Toast('密码或者手机号有误');
       }
     },
     //验证码注册登录
@@ -78,27 +98,36 @@ export default {
     },
     //  发送验证码
     async zqd_fa() {
-      console.log('123');
-      let {data} = await posts('/api/app/smsCode',{
-         mobile: this.zqd_yan.mobile,
-         sms_type: 'login',
-      })
-      // let { data } = await this.$http.post('http://120.53.31.103:84/api/app/smsCode', {
-      //   mobile: this.zqd_yan.mobile,
-      //   sms_type: 'login',
-      // });
+      // console.log('123');
+      let res = /^1[3|4|5|7|8][0-9]{9}$/;
+      if (!res.test(this.zqd_yan.mobile)) {
+        Toast('手机号格式不正确');
+        return false;
+      }
+      this.zqd_show = false;
+      let { data } = await posts('/api/app/smsCode', {
+        mobile: this.zqd_yan.mobile,
+        sms_type: 'login',
+      });
       console.log(data);
+      // 验证码登录  判断是第几次
+      if(data.data.is_new==2){
+        this.$router.push('/person');
+      }else{
+        this.$router.push('/set-pass')
+      }
     },
     // 短信登
     async zqd_duanxindeng() {
       let { data } = await this.$http.post('http://120.53.31.103:84/api/app/login', this.zqd_yan);
       console.log(data);
     },
-   //  跳转找回密码
-   zqd_zhao(){
-      this.$router.push('/forget-pass')
-   }
+    //  跳转找回密码
+    zqd_zhao() {
+      this.$router.push('/forget-pass');
+    },
   },
+
 };
 </script>
 
@@ -128,23 +157,41 @@ span {
 #zqd {
   width: 6.5rem;
   height: 1rem;
-  margin-left: 0.5rem;
   margin-top: 5rem;
   border-radius: 0.5rem;
   background: linear-gradient(90deg, #ff9045, #fc5500);
   color: #fff;
   font-size: 0.5rem;
 }
-.zqd_div1{
+.zqd_div1 {
   width: 100%;
   box-sizing: border-box;
   padding: 0.3rem;
-  input{
+  text-align: center;
+  > div > div {
+    border-bottom: 1px solid #f1f1f1;
+  }
+  .zqd_active {
+    border-bottom: 1px solid #eb6100;
+  }
+  input {
     width: 100%;
     height: 0.5rem;
   }
 }
-.zqd_active{
-  
+.van-field__button {
+  span {
+    color: #eb6100;
+  }
+}
+.sp {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+#qq {
+  color: #808080;
+  font-size: 0.12rem;
+  display: inline-block;
 }
 </style>

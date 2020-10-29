@@ -170,6 +170,7 @@
 <script>
 import Foot from '@/components/Footer.vue';
 import bus from '@/assets/bus';
+import {gets} from '../util/api'
 export default {
   data() {
     return {
@@ -179,7 +180,10 @@ export default {
     };
   },
   created() {},
-  mounted() {},
+  async mounted() {
+      let {data} =await gets('/api/app/myStudy/2')
+      console.log(data)
+  },
   methods: {
     // 跳转个人信息
     zqd_ge() {

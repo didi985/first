@@ -3,13 +3,11 @@ import Vue from 'vue'
 import {
     NavBar, Swipe, SwipeItem, Tabbar, TabbarItem, Tab,
     Tabs, PullRefresh, Button, Sticky, Calendar, Card, Icon, DropdownMenu, Popup,
-    DropdownItem, Search, List, Image as VanImage, Overlay, Dialog, TreeSelect, SidebarItem, Sidebar,
-    Grid,
-    GridItem, Field,Checkbox, CheckboxGroup,Pagination
+    DropdownItem, Search, List, Image as VanImage, Overlay, Dialog, TreeSelect, SidebarItem, Sidebar,Grid,
+    GridItem, Field, Checkbox, CheckboxGroup, Pagination, CountDown, Toast,
 } from 'vant';
 
 import 'vant/lib/index.css';
-
 
 Vue.use(SidebarItem);
 Vue.use(Swipe);
@@ -41,6 +39,9 @@ Vue.use(Checkbox);
 Vue.use(Pagination);
 Vue.use(CheckboxGroup);
 Vue.use(Field);
+Vue.use(CountDown);
+Vue.use(Toast);
+
 
 
 

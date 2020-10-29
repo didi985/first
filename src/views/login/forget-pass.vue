@@ -9,7 +9,8 @@
     <!-- 手机号 -->
     <van-field v-model="zqd_gai.mobile" center clearable label="" placeholder="请输入手机号">
       <template #button>
-        <van-button size="small" type="primary" @click="zqd_fa">发送验证码</van-button>
+        <!-- <van-button size="small" type="primary" @click="zqd_fa">发送验证码</van-button> -->
+        <span @click="zqd_fa" style="color: #eb6100; font-size:0.14rem;" >发送验证码</span>
       </template>
     </van-field>
     <!-- 输入验证码 -->
@@ -46,12 +47,16 @@ export default {
         mobile: this.zqd_gai.mobile,
         sms_type: 'getPassword',
       });
-      // console.log(data);
+      console.log(data);
     },
     //  确定修改
     async zqd_duanxindeng() {
       let { data } = await posts('/api/app/password',this.zqd_gai);
       console.log(data);
+      if(data.msg=='操作成功'){
+        Toast('修改密码成功');
+          this.$router.push('/preson')
+      }
     },
   },
 };
