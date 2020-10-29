@@ -286,7 +286,7 @@ export default {
         }
       })
       this.list=data.data.list
-      console,log(this.list)
+      console.log(this.list)
     },
 
     // 分类
