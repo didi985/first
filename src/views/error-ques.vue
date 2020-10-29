@@ -14,20 +14,21 @@
         <div class="cxy_top">
             <van-icon @click="$router.push('/error-list')" name="notes-o">巩固错题 </van-icon>
             <!-- <p>巩固错题</p> -->
-            <van-icon  @click="Dialog()" name="todo-list-o">巩固错题 </van-icon>
+            <van-icon  @click="Dialog()" name="todo-list-o">移出错题 </van-icon>
 
             <!-- <p @click="Dialog()">移除错题</p> -->
         </div>
     </van-dropdown-menu>
-    <!-- <div class="cen">
+    <div class="cen" v-show="flag">
         <img src="https://wap.365msmk.com/img/empty.0d284c2e.png" alt="">
         <p>请稍候，套卷正在赶来的路上啦</p>
-    </div> -->
-    <el-card>
-        <div><p></p><span></span></div>
-        <div><p></p></div>
-        <div></div>   
+    </div>
+    <el-card v-show="!flag">
+        <div class="cxy_one"><p>物理学史</p><span>7道错题</span></div>
+        <div class="cxy_two"><p>提交时间：2020/10/28 15:16:53</p></div>
+        <div class="cxy_three"><van-button color="#7232dd" round plain size="small">巩固错题</van-button></div>   
     </el-card>
+    <p class="mei">没有更多了</p>
 </div>
 
 
@@ -44,6 +45,7 @@ export default {
   // 组件状态值
   data () {
    return {
+       flag:false,
             value1: 0,
             option1: [
                 { text: '全部', value: 0 },
@@ -113,5 +115,35 @@ export default {
         align-items: center;
 }
 }
+.el-card{
+    padding: 0.2rem;
+    margin: 0.2rem;
+    div{
+        margin-bottom: 0.2rem;
+    }
+    .cxy_one{
+        display: flex;
+        justify-content: space-between;
+        p{
+            font-size: 0.28rem;            
+        }
+        span{
+            font-size: 0.24rem;
+            color: #4a70ff;
+        }
+    }
+    .cxy_two{
+        font-size: 0.22rem;
+        color: #8c8c8c;
+    }
+    .cxy_three{
+        text-align: right;
+        width: 100%;
+    }
+}
+.mei{
+    text-align: center;
+    color: #969799;
 
+}
 </style>

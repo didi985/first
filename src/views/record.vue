@@ -139,5 +139,4 @@ export default {
     height: 100%;
   }
 }
-</style>
->>>>>>> 7c454feb7f9d21328cc54f84466b3059afded72e
+</style> 

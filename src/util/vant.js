@@ -1,7 +1,5 @@
 // 引入vant
 import Vue from 'vue'
-
-
 import {
     NavBar, Swipe, SwipeItem, Tabbar, TabbarItem, Tab,
     Tabs, PullRefresh, Button, Sticky, Calendar, Card, Icon, DropdownMenu, Popup,
@@ -10,6 +8,7 @@ import {
     Grid,
     GridItem, Field
 } from 'vant';
+
 
 import 'vant/lib/swipe/style';
 import 'vant/lib/swipe-item/style';
@@ -44,6 +43,7 @@ import 'vant/lib/image/style';
 
 
 Vue.use(SidebarItem);
+
 Vue.use(Swipe);
 Vue.use(Sidebar);
 Vue.use(Grid);
