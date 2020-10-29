@@ -5,10 +5,11 @@ import {
     Tabs, PullRefresh, Button, Sticky, Calendar, Card, Icon, DropdownMenu, Popup,
     DropdownItem, Search, List, Image as VanImage, Overlay, Dialog, TreeSelect, SidebarItem, Sidebar,
     Grid,
-    GridItem, Field
+    GridItem, Field,Checkbox, CheckboxGroup,Pagination
 } from 'vant';
 
 import 'vant/lib/index.css';
+
 
 Vue.use(SidebarItem);
 Vue.use(Swipe);
@@ -36,6 +37,9 @@ Vue.use(Overlay);
 Vue.use(Popup);
 Vue.use(Dialog);
 Vue.use(TreeSelect);
+Vue.use(Checkbox);
+Vue.use(Pagination);
+Vue.use(CheckboxGroup);
 Vue.use(Field);
 
 

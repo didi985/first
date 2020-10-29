@@ -22,13 +22,17 @@
     <div class="tad-box">
       <!-- 内容 -->
       <div class="tad-dan">
-        <p class="tad-p1">李老师女神节地理大讲堂开课了！</p>
-
+        <div>
+          <p class="tad-p1" >{{list.title}}</p>
         <p class="tad-p2">
-          <font>免费</font>
+           <font v-if="list.price==0">免费</font>
+              <font v-if="list.price!=0" class="fk">
+                <img src="../../public/img/a1f37d1be616ee3adf3baa7bb806bea3_03.jpg" alt="">
+                {{list.price/100+'.00'}}</font>
         </p>
-        <p class="tad-p3">共三课时|67人已报名</p>
-        <p class="tad-p3">开课时间：2020.03.08 08:30 - 2020.03.08 10:30</p>
+        <p class="tad-p3">共{{list.course_type}}课时|{{list.browse_num}}人已报名</p>
+        <p class="tad-p3">开课时间：{{list.end_play_date | timetow}} - {{list.enter_end_date | timetow}}</p>
+        </div>
       </div>
 
       <!-- 教学团队 -->
@@ -36,7 +40,7 @@
         <p>教学团队</p>
         <ul>
           <li>
-            <img src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png" alt />
+            <img :src="list.cover_img" alt />
             <font>李青</font>
           </li>
         </ul>
@@ -262,22 +266,34 @@
 export default {
   data() {
     return {
-       indexList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      indexList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       //  页面滚动
       top: "",
       flog: false,
-      fll: true
+      fll: true,
+
+      // 基本数据
+      list:[]
     };
   },
   name: "demo",
   props: {},
   mounted() {
+    this.fun()
     window.addEventListener("scroll", this.scrollHandle); // 绑定页面的滚动事
   },
   // 计算属性
   computed: {},
   watch: {},
   methods: {
+    // 获取数据
+    async fun(){
+      let { data } = await this.$http.get(`/api/app/courseInfo/basis_id=${this.$route.query.id}`)
+      this.list = data.data.info
+      console.log(this.list)
+    },
+
+
     // 返回路由
     fan() {
       this.$router.go(-1);
@@ -382,6 +398,10 @@ export default {
   margin: 0;
   height: 0.6rem;
   line-height: 0.6rem;
+}
+.tad-p2 .fk {
+  color: #EE1F1F;
+  font-size: 0.3rem;
 }
 .tad-p3 {
   color: #8c8c8c;
