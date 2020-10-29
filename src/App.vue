@@ -15,9 +15,16 @@ export default {
   },
 
   created() {},
-  mounted() {},
+  mounted() {
+    document.links
+  },
   methods: {},
-
+  watch:{
+    $route(to){
+      console.log(to.meta.title);
+      document.title=to.meta.title
+    }
+  }
 };
 </script>
 <style lang="scss">

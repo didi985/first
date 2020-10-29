@@ -19,48 +19,72 @@ const routes = [
     path: '/login',
     name: 'login',
     component: () => import('../views/login/login.vue'),
-
+    meta: {
+      title: '登录'
+    }
   },
-  // 首页
+  // 每时每课
   {
     path: '/index',
     name: 'index',
     component: () => import('../views/index.vue'),
+    meta: {
+      title: '每时每课'
+    }
   },
   // 课程
   {
     path: '/course',
     name: 'course',
     component: () => import('../components/Course.vue'),
+    meta: {
+      title: '特色课'
+    }
   },
   // 会员课程
   {
     path: '/huiyuan',
     name: 'huiyuan',
     component: () => import('../components/huiyuan.vue'),
+    meta: {
+      title: '每时每课'
+    }
   },
   // 会员课程
   {
     path: '/yueke',
     name: 'yueke',
     component: () => import('../components/yueke.vue'),
+    meta:{
+      title:''
+    }
   },
   // 约课记录
   {
     path: '/record',
     name: 'record',
     component: () => import('../views/record.vue'),
+    meta:{
+      title:'约课记录'
+    }
   },
+  // 练习
   {
     path: '/practise',
     name: 'practise',
     component: () => import('../views/practise.vue'),
+    meta:{
+      title:'练习'
+    }
   },
   // 我的
   {
     path: '/person',
     name: 'Per',
     component: () => import('../views/Per.vue'),
+    meta:{
+      title:'个人中心'
+    }
 
   },
   // 我的
@@ -69,213 +93,264 @@ const routes = [
     name: 'Course',
     component: Course
   },
-  // 课程单页面
+  // 课程详情
   {
     path: '/Course-detail',
     name: 'Course-detail',
-    component: function () {
-      return import('../components/Course-detail.vue')
+    component: () => import('../components/Course-detail.vue'),
+    meta:{
+      title:'课程详情'
     }
+
   },
-    // 学习页面
-    {
-      path: '/study-detail',
-      name: 'study-detail',
-      component: function () {
-        return import('../components/study-detail.vue')
-      }
-    },
+  // 学习详情
+  {
+    path: '/study-detail',
+    name: 'study-detail',
+    component: () => import('../components/study-detail.vue'),
+    meta:{
+      title:'学习详情'
+    }
+
+  },
   // 搜索页面
   {
     path: '/Search',
     name: 'Search',
-    component: Search
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: function () {
-      return import('../views/About.vue')
+    component: Search,
+    meta: {
+      title:'搜索'
     }
-  },
+  }, 
   // 个人信息
   {
     path: '/info',
     name: 'info',
-    component: function () {
-      return import('../components/info.vue')
+    component: () => import('../components/info.vue'),
+    meta:{
+      title:'个人信息'
     }
+
   },
-   // 特色课
-   {
+  // 我的学习
+  {
     path: '/my-study',
     name: 'my-study',
-    component: function () {
-      return import('../components/my-study.vue')
+    component: () => import('../components/my-study.vue'),
+    meta:{
+      title:'我的学习'
     }
+
   },
   // 学习币
   {
     path: '/my-currency',
     name: 'my-currency',
-    component: function () {
-      return import('../components/my-currency.vue')
+    component: () => import('../components/my-currency.vue'),
+    meta:{
+      title:'我的余额'
     }
+
   },
   // 关注的老师
   {
     path: '/concern',
     name: 'concern',
-    component: function () {
-      return import('../components/concern.vue')
+    component: () => import('../components/concern.vue'),
+    meta:{
+      title:'我的关注'
     }
+
   },
   // 收藏的东西
   {
     path: '/collect',
     name: 'collect',
-    component: function () {
-      return import('../components/collect.vue')
+    component: () => import('../components/collect.vue'),
+    meta:{
+      title:'我的收藏'
     }
+
   },
   // 课程订单
   {
     path: '/order',
     name: 'order',
-    component: function () {
-      return import('../components/order.vue')
+    component: () => import('../components/order.vue'),
+    meta:{
+      title:'订单'
     }
+
   },
   // 优惠券
   {
     path: '/coupon',
     name: 'coupon',
-    component: function () {
-      return import('../components/coupon.vue')
+    component: () => import('../components/coupon.vue'),
+    meta:{
+      title:'优惠券'
     }
+
   },
   // 学习卡
   {
     path: '/card',
     name: 'card',
-    component: function () {
-      return import('../components/card.vue')
+    component: () => import('../components/card.vue'),
+    meta:{
+      title:'学习卡'
     }
+
   },
   // 会员
   {
     path: '/vip',
     name: 'vip',
-    component: function () {
-      return import('../components/vip.vue')
+    component: () => import('../components/vip.vue'),
+    meta:{
+      title:'会员'
     }
+
   },
   // 信息
   {
     path: '/message',
     name: 'message',
-    component: function () {
-      return import('../components/message.vue')
+    component: () => import('../components/message.vue'),
+    meta:{
+      title:'信息中心'
     }
+
   },
   // 信息通知详情
   {
     path: '/message-detail',
     name: 'message-detail',
-    component: function () {
-      return import('../components/message-detail.vue')
+    component: () => import('../components/message-detail.vue'),
+    meta:{
+      title:'信息'
     }
+
   },
   // 意见反馈
   {
     path: '/feedback',
     name: 'feedback',
-    component: function () {
-      return import('../components/feedback.vue')
+    component: () => import('../components/feedback.vue'),
+    meta:{
+      title:'意见反馈'
     }
+
   },
-   // 设置
-   {
+  // 设置
+  {
     path: '/options',
     name: 'options',
-    component: function () {
-      return import('../components/options.vue')
+    component: () => import('../components/options.vue'),
+    meta:{
+      title:'设置'
     }
+
   },
-
-
   //学习日历
   {
     path: '/study-calendar',
     name: 'study-calendar',
     component: () => import('../views/study-calendar.vue'),
+    meta:{
+      title:'学习日历'
+    }
   },
-    //学习日历
-    {
-      path: '/teacher',
-      name: 'teacher',
-      component: () => import('../views/Teacher.vue'),
-    },
-    //测评记录
-    {
-      path: '/assess',
-      name: 'assess',
-      component: () => import('../views/assess.vue'),
-    },
-    //习题收藏
-    {
-      path: '/ques-collect',
-      name: 'ques-collect',
-      component: () => import('../views/ques-collect.vue'),
-    },
-    //习题详情
-    {
-      path: '/ques',
-      name: 'ques',
-      component: () => import('../views/ques.vue'),
-    },
+  //讲师详情
+  {
+    path: '/teacher',
+    name: 'teacher',
+    component: () => import('../views/Teacher.vue'),
+    meta:{
+      title:'讲师详情'
+    }
+  },
+  //测评记录
+  {
+    path: '/assess',
+    name: 'assess',
+    component: () => import('../views/assess.vue'),
+    meta:{
+      title:'测评记录'
+    }
+  },
+  //习题收藏
+  {
+    path: '/ques-collect',
+    name: 'ques-collect',
+    component: () => import('../views/ques-collect.vue'),
+    meta:{
+      title:'习题收藏'
+    }
+  },
+  //习题详情
+  {
+    path: '/ques',
+    name: 'ques',
+    component: () => import('../views/ques.vue'),
+    meta:{
+      title:'做题'
+    }
+  },
 
   //一对一辅导
   {
     path: '/oto',
     name: 'oto',
     component: () => import('../views/oto.vue'),
+    meta:{
+      title:'一对一辅导'
+    }
   },
-  // 一对一辅导详情
+  // 预约课程
   {
     path: '/oto-plan',
     name: 'oto-plan',
     component: () => import('../views/oto-plan.vue'),
-  },
-  {
-    path: '/oto',
-    name: 'oto',
-    component: () => import('../views/oto.vue'),
-  },
-  // 搜索
+    meta:{
+      title:'预约课程'
+    }
+  },  
   {
     //题库选择
     path: '/point',
     name: 'point',
     component: () => import('../views/point.vue'),
+    meta:{
+      title:'考点练习'
+    }
   },
   {
     //套卷练习
     path: '/paper-package',
     name: 'paper-package',
     component: () => import('../views/paper-package.vue'),
+    meta:{
+      title:'套卷练习'
+    }
   },
   // 找回密码
   {
     path: '/forget-pass',
     name: 'forget-pass',
     component: () => import('../views/login/forget-pass.vue'),
+    meta:{
+      title:'找回密码'
+    }
   },
-   // 学习卡兑换
-   {
+  // 学习卡兑换
+  {
     path: '/exchange',
     name: 'exchange',
     component: () => import('../components/exchange.vue'),
+    meta:{
+      title:'学习卡兑换'
+    }
   },
 
 
@@ -284,18 +359,27 @@ const routes = [
     path: '/exam',
     name: 'exam',
     component: () => import('../views/exam.vue'),
+    meta:{
+      title:'仿真练习'
+    }
   },
   {
     //错题练习
     path: '/error-ques',
     name: 'error-ques',
     component: () => import('../views/error-ques.vue'),
+    meta:{
+      title:'错题练习'
+    }
   },
   {
     //
     path: '/error-list',
     name: 'error-list',
     component: () => import('../views/error-list.vue'),
+    meta:{
+      title:'错题练习'
+    }
   },
 
 
