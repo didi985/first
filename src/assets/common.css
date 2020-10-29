@@ -13,22 +13,20 @@
     height: 100%;
  }
 
- /* .zqd_ul .van-nav-bar__text {
+ .zqd_ul .van-nav-bar__text {
     color: #000 !important;
     font-size: 0.12rem;
  }
 
-<<<<<<< HEAD
-=======
  .zqd_ul .van-icon {
     color: #000 !important;
  }
 
  .zb_box .van-dropdown-menu__bar {
     height: .84rem !important;
- } */
+ }
 
- 
+
 
  .zb_box .van-tabs {
     height: .0rem;
@@ -46,4 +44,3 @@
  .footer.van-icon ,.footer .van-tabbar-item__text {
    font-size: 2.93333vw;
  }
->>>>>>> 18504a47812d16f11b54017f4cdf82b482fc3ad8
