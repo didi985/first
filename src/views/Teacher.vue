@@ -12,18 +12,18 @@
     <div class="cxy_base">
       <div>
         <img
-          src="https://msmk2019.oss-cn-shanghai.aliyuncs.com/uploads/image/2019X3gWvILU7J1571983543.png"
+          :src="list.avatar"
           alt=""
-        />
-        <div>
-          <p></p>
+        /> 
+       <div>
+          <p>{{list.real_name}}</p>
         </div>
         <div>
           <van-button round type="info">关注</van-button>
         </div>
-      </div>
+      </div> 
     </div>
-    <div class="cxy_nav">
+   <div class="cxy_nav">
       <van-tabs v-model="activeName" title-active-color="#eb6100">
         <van-tab title="讲师介绍" name="a">
             <el-row>
@@ -88,11 +88,12 @@
     </div>
     <van-tabbar>
       <van-tabbar-item>立即预约</van-tabbar-item>
-    </van-tabbar>
+    </van-tabbar> 
   </div>
 </template>
 
 <script>
+import {gets} from '../util/api'
 export default {
   // 组件名称
   name: "demo",
@@ -104,14 +105,22 @@ export default {
   data() {
     return {
       activeName: "a",
+      list:{}
     };
   },
   // 计算属性
   computed: {},
   // 侦听器
   watch: {},
+  async mounted(){
+    // console.log(this.$route.query.id)
+    let {data} = await gets('/api/app/teacher/'+this.$route.query.id)
+    this.list = data.data.teacher
+  },
   // 组件方法
-  methods: {},
+  methods: {
+
+  },
 };
 </script> 
 

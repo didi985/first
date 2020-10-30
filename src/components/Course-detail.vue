@@ -22,16 +22,19 @@
     <div class="tad-box">
       <!-- 内容 -->
       <div class="tad-dan">
+        <van-icon name="star-o" size="0.4rem" @click="xing" v-show="foo"/>
+         <van-icon name="star" size="0.4rem" color="#EB6100" @click="fanxing" v-show="!foo"/>
         <div>
-          <p class="tad-p1" >{{list.title}}</p>
+          <p class="tad-p1" >{{list1.title}}
+          </p>
         <p class="tad-p2">
-           <font v-if="list.price==0">免费</font>
-              <font v-if="list.price!=0" class="fk">
+           <font v-if="list1.price==0">免费</font>
+              <font v-if="list1.price!=0" class="fk">
                 <img src="../../public/img/a1f37d1be616ee3adf3baa7bb806bea3_03.jpg" alt="">
-                {{list.price/100+'.00'}}</font>
+                {{list1.price/100+'.00'}}</font>
         </p>
-        <p class="tad-p3">共{{list.course_type}}课时|{{list.browse_num}}人已报名</p>
-        <p class="tad-p3">开课时间：{{list.end_play_date | timetow}} - {{list.enter_end_date | timetow}}</p>
+        <p class="tad-p3">共{{list1.course_type}}课时|{{list1.browse_num}}人已报名</p>
+        <p class="tad-p3">开课时间：{{list1.end_play_date | timetow}} - {{list1.enter_end_date | timetow}}</p>
         </div>
       </div>
 
@@ -40,8 +43,8 @@
         <p>教学团队</p>
         <ul>
           <li>
-            <img :src="list.cover_img" alt />
-            <font>李青</font>
+            <img :src="list1.cover_img" alt />
+            <font>{{list1.course_statement}}</font>
           </li>
         </ul>
       </div>
@@ -85,180 +88,40 @@
         </div>
       </div>
       <!-- 课程评论 -->
-      <div class="tad-tu2">
+
+      <div class="tad-tu2 tu3">  
 
         <p>课程评论</p>
-        <ul>
+        <ul v-for="(item,index) in list3" :key="index">
           <li>
             <div>
-              <img src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png" alt />
+              <img :src="item.avatar" alt />
               <div>
                 <div>
-                  <span>15551635763</span>
+                  <span>{{item.nickname}}</span>
                   <span>
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
+                    <span></span>
+                    <van-icon name="star" color="#EA7A2F"/>
+                    <van-icon name="star" color="#EA7A2F"/>
+                    <van-icon name="star" color="#EA7A2F"/>
+                    <van-icon name="star" color="#EA7A2F"/>
                   </span>
-                  <span>2020-12-11 14:54</span>
+                  <span>{{Number(item.created_at) | timetesev}}</span>
                 </div>
                 <!-- <p>风格的</p> -->
                 <div>
-                  <span>内容</span>
+                  <span>{{item.content}}</span>
                 </div>
               </div>
             </div>
           </li>
         </ul>
 
-        <ul>
-          <li>
-            <div>
-              <img src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png" alt />
-              <div>
-                <div>
-                  <span>15551635763</span>
-                  <span>
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                  </span>
-                  <span>2020-12-11 14:54</span>
-                </div>
-                <!-- <p>风格的</p> -->
-                <div>
-                  <span>内容</span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul>
-          <li>
-            <div>
-              <img src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png" alt />
-              <div>
-                <div>
-                  <span>15551635763</span>
-                  <span>
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                  </span>
-                  <span>2020-12-11 14:54</span>
-                </div>
-                <!-- <p>风格的</p> -->
-                <div>
-                  <span>内容</span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul>
-          <li>
-            <div>
-              <img src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png" alt />
-              <div>
-                <div>
-                  <span>15551635763</span>
-                  <span>
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                  </span>
-                  <span>2020-12-11 14:54</span>
-                </div>
-                <!-- <p>风格的</p> -->
-                <div>
-                  <span>内容</span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul>
-          <li>
-            <div>
-              <img src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png" alt />
-              <div>
-                <div>
-                  <span>15551635763</span>
-                  <span>
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                  </span>
-                  <span>2020-12-11 14:54</span>
-                </div>
-                <!-- <p>风格的</p> -->
-                <div>
-                  <span>内容</span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul>
-          <li>
-            <div>
-              <img src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png" alt />
-              <div>
-                <div>
-                  <span>15551635763</span>
-                  <span>
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                  </span>
-                  <span>2020-12-11 14:54</span>
-                </div>
-                <!-- <p>风格的</p> -->
-                <div>
-                  <span>内容</span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-
-        <ul>
-          <li>
-            <div>
-              <img src="../../public/img/0ac5ae20de2db5409b16c4dfa73dfab5.png" alt />
-              <div>
-                <div>
-                  <span>15551635763</span>
-                  <span>
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                    <van-icon name="star" />
-                  </span>
-                  <span>2020-12-11 14:54</span>
-                </div>
-                <!-- <p>风格的</p> -->
-                <div>
-                  <span>内容</span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
+     
       </div>
     </div>
 
-    <div class="tad-bt" @click="xuexi">立即学习</div>
+    <div class="tad-bt" @click="xuexi()">立即学习</div>
   </div>
 </template>
 
@@ -271,15 +134,21 @@ export default {
       top: "",
       flog: false,
       fll: true,
+      foo:true,
+      id:this.$route.query.id,
 
       // 基本数据
-      list:[]
+      list:[],
+      list1:[],
+      list3:[]
     };
   },
   name: "demo",
   props: {},
   mounted() {
     this.fun()
+    this.fun1()
+    this.fun2()
     window.addEventListener("scroll", this.scrollHandle); // 绑定页面的滚动事
   },
   // 计算属性
@@ -289,10 +158,50 @@ export default {
     // 获取数据
     async fun(){
       let { data } = await this.$http.get(`/api/app/courseInfo/basis_id=${this.$route.query.id}`)
-      this.list = data.data.info
+      this.list = data.data
       console.log(this.list)
+
+
+    },
+    // 课程
+    async fun1(){
+      let { data } = await this.$http.get(`/api/app/courseInfo/basis_id=${this.$route.query.id}`)
+      this.list1 = data.data.info
+      console.log(this.list1)
+    },
+    // 大纲
+    async fun2(){
+      let { data } = await this.$http.post('/api/app/courseComment',{
+          page:1,
+          limit:10,
+          id:this.id
+      })
+      this.list3 = data.data.list
+      console.log(data)
+      console.log(this.list3)
     },
 
+    // 收藏
+    async xing(){
+      this.foo=false
+      // let { data } = await this.$http.post('/api/app/collect',{
+      //   params:{
+      //     course_basis_id:this.$route.query.id,
+      //     type: 1
+      //   }
+      // })
+      // console.log(data)
+    },
+    // 取消收藏
+    fanxing(){
+      this.foo=true
+      //  let { data } = await this.$http.post('/api/app/collect/cancel/227/1',{
+      //   // params:{
+      //   //   collect_id:
+      //   // }
+      // })
+      // console.log(data)
+    },
 
     // 返回路由
     fan() {
@@ -384,6 +293,11 @@ export default {
   margin-bottom: 0.3rem;
   position: relative;
 }
+.tad-dan .van-icon{
+  position: absolute;
+  top: 0.3rem;
+  right: 0.4rem;
+}
 .tad-dan .tad-p1 {
   font-size: 0.3rem;
   color: #333;
@@ -464,7 +378,9 @@ export default {
   padding: 0.06rem 0.16rem;
   color: #595959;
 }
-
+.tu3{
+    margin-bottom: 0.8rem;
+}
 .tad-tu2 {
   margin-top: 0.3rem;
   background: #fff;
@@ -492,6 +408,8 @@ export default {
           // flex-direction: row-reverse;
           justify-content: start;
           div {
+            display: flex;
+            justify-content: space-between;
             width: 6.17rem;
             height: 0.3rem;
           }

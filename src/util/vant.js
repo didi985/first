@@ -32,11 +32,10 @@ import {
     CheckboxGroup,
     Pagination,
     CountDown,
-    Toast
+    Toast , 
 } from 'vant';
 
 import 'vant/lib/index.css';
-
 
 Vue.use(SidebarItem);
 Vue.use(Swipe);
@@ -69,4 +68,8 @@ Vue.use(Pagination);
 Vue.use(CheckboxGroup);
 Vue.use(Field);
 Vue.use(CountDown);
-Vue.use(Toast)
+Vue.use(Toast);
+
+
+
+

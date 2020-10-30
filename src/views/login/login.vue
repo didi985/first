@@ -11,25 +11,11 @@
       <div>
         <!-- 手机号 -->
         <div :class="input1 ? 'zqd_active' : ''">
-          <van-field
-            v-model="zqd_deng1.mobile"
-            type="tel"
-            label=""
-            placeholder="请输入手机号"
-            @focus="input1 = true"
-            @blur="input1 = false"
-          />
+          <van-field v-model="zqd_deng1.mobile" type="tel" label="" placeholder="请输入手机号" @focus="input1 = true" @blur="input1 = false" />
         </div>
         <!-- 密码 -->
         <div :class="input2 ? 'zqd_active' : ''">
-          <van-field
-            v-model="zqd_deng1.password"
-            type="password"
-            label=""
-            placeholder="请输入密码"
-            @focus="input2 = true"
-            @blur="input2 = false"
-          />
+          <van-field v-model="zqd_deng1.password" type="password" label="" placeholder="请输入密码" @focus="input2 = true" @blur="input2 = false" />
         </div>
       </div>
       <div class="sp">
@@ -40,65 +26,48 @@
       <van-button type="primary" id="zqd" @click="zqd_deng()">登录</van-button>
     </div>
 
+
     <!-- 验证码注册登录 -->
     <div v-show="zqd == 1" class="zqd_div1">
       <!-- 手机号 -->
       <div :class="input1 ? 'zqd_active' : ''">
-        <van-field
-          v-model="zqd_yan.mobile"
-          center
-          clearable
-          label=""
-          placeholder="请输入手机号"
-          @focus="input1 = true"
-          @blur="input1 = false"
-        >
+        <van-field v-model="zqd_yan.mobile" center clearable label="" placeholder="请输入手机号" @focus="input1 = true" @blur="input1 = false">
           <template #button>
-            <div>
-              <div v-show="yan">
-                <van-count-down
-                  :time="60 * 1000"
-                  format="获取验证码(ss)"
-                  @finish="yan = false"
-                />
-              </div>
-              <span @click="zqd_fa" v-show="!yan">获取验证码</span>
-            </div>
+            <span @click="zqd_fa" v-show="zqd_show">获取验证码</span>
+
+            <p @click="zqd_fa" id="qq" v-show="!zqd_show">获取验证码 (<van-count-down :time="time" format="ss" id="qq" />)</p>
           </template>
         </van-field>
       </div>
       <!-- 验证码 -->
       <div :class="input2 ? 'zqd_active' : ''">
-        <van-field
-          v-model="zqd_yan.sms_code"
-          type="password"
-          label=""
-          placeholder="请输入短信验证码"
-          @focus="input2 = true"
-          @blur="input2 = false"
-        />
+        <van-field v-model="zqd_yan.sms_code" type="password" label="" placeholder="请输入短信验证码" @focus="input2 = true" @blur="input2 = false" />
       </div>
       <div class="sp">
         <span class="zqd_sp1">*未注册的手机号自动注册</span>
         <span class="zqd_sp2" @click="zqd = 0">使用密码登录</span>
       </div>
       <!-- 底部按钮 -->
-      <van-button type="primary" id="zqd" @click="zqd_duanxindeng"
-        >登录</van-button
-      >
+      <van-button type="primary" id="zqd" @click="zqd_duanxindeng">登录</van-button>
     </div>
+    <!-- <van-count-down :time="time" /> -->
   </div>
 </template>
 
+
 <script>
-import { posts } from "@/util/api";
+import { posts } from '@/util/api';
+import { Toast } from 'vant';
 export default {
   data() {
     return {
-      input1: false,
-      input2: false,
+      time: 60 * 1000,
+      input1: false, //判断input高亮
+      input2: false, //判断input高亮
+      zqd_show: true, //判断验证码一分钟
       zqd: 0,
-      yan: false,
+      yanzheng:true,
+      times:60,
       //   登录
       zqd_deng1: {
         mobile: "",
@@ -114,20 +83,20 @@ export default {
       },
     };
   },
-  created() {},
+  created() {
+    // console.log(this.time)
+  },
   mounted() {},
   methods: {
     //   z帐号密码登录
     async zqd_deng() {
-      let { data } = await this.$http.post(
-        "http://120.53.31.103:84/api/app/login",
-        this.zqd_deng1
-      );
-      console.log(data.msg);
-      console.log("123");
-      if (data.msg == "操作成功") {
-        localStorage.setItem("token", data.data.remember_token);
-        this.$router.push("/person");
+      let {data} = await posts('/api/app/login',this.zqd_deng1)
+      // console.log(data)
+      if (data.msg == '操作成功') {
+        localStorage.setItem('token', data.data.remember_token);
+        this.$router.push('/person');
+      }else{
+        Toast('密码或者手机号有误');
       }
     },
     //验证码注册登录
@@ -136,39 +105,56 @@ export default {
     },
     //  发送验证码
     async zqd_fa() {
-      if (!/^1[3|4|5|7|8][0-9]{9}$/.test(this.zqd_yan.mobile)) {
-        //当手机号匹配你要做什么
-        this.$toast('手机号格式不正确');
+      // console.log('123');
+      let res = /^1[3|4|5|7|8][0-9]{9}$/;
+      if (!res.test(this.zqd_yan.mobile)) {
+        Toast('手机号格式不正确');
         return false;
       }
-      let { data } = await posts("/api/app/smsCode", {
+      this.zqd_show = false;
+      let { data } = await posts('/api/app/smsCode', {
         mobile: this.zqd_yan.mobile,
-        sms_type: "login",
+        sms_type: 'login',
       });
-      if (data.code == 201) {
-        this.$toast(data.msg);
-        this.yan = true;
-      }
       console.log(data);
+      // 验证码登录  判断是第几次
+      if(data.data.is_new==2){
+        this.$router.push('/person');
+      }else{
+        this.$router.push('/set-pass')
+      }
     },
     // 短信登
     async zqd_duanxindeng() {
+      // this.$router.push('/person')
       let { data } = await this.$http.post(
         "http://120.53.31.103:84/api/app/login",
         this.zqd_yan
       );
-      if(data.data.is_new==1){
-        this.$router.push('/person')
+      if(data.msg=='操作成功'){
+        localStorage.setItem("token", data.data.remember_token);
       }
-      console.log(data);
+      if(data.data.is_new==1){
+      this.$router.push('/new')
+      }else{
+      this.$router.push('/info')
+      }
+
+      // console.log(data);
     },
     //  跳转找回密码
     zqd_zhao() {
       this.$router.push("/forget-pass");
     },
+    //  跳转找回密码
+    zqd_zhao() {
+      this.$router.push('/forget-pass');
+    },
   },
+
 };
 </script>
+
 
 <style scoped lang="scss">
 .zqd_login {
@@ -227,5 +213,10 @@ span {
   display: flex;
   justify-content: space-between;
   margin-top: 0.2rem;
+}
+#qq {
+  color: #808080;
+  font-size: 0.12rem;
+  display: inline-block;
 }
 </style>
