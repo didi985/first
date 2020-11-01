@@ -33,7 +33,7 @@
                 <img src="../../public/img/a1f37d1be616ee3adf3baa7bb806bea3_03.jpg" alt="">
                 {{list1.price/100+'.00'}}</font>
         </p>
-        <p class="tad-p3">共{{list1.course_type}}课时|{{list1.browse_num}}人已报名</p>
+        <p class="tad-p3">共{{list1.course_type}}课时|{{list1.sales_num}}人已报名</p>
         <p class="tad-p3">开课时间：{{list1.end_play_date | timetow}} - {{list1.enter_end_date | timetow}}</p>
         </div>
       </div>
@@ -43,8 +43,8 @@
         <p>教学团队</p>
         <ul>
           <li>
-            <img :src="list1.cover_img" alt />
-            <font>{{list1.course_statement}}</font>
+            <img :src="list.teacher_avatar" alt />
+            <font>{{list.teacher_name}}</font>
           </li>
         </ul>
       </div>
@@ -52,12 +52,16 @@
       <!-- 课程介绍 -->
       <div class="tad-tu1" id="box1">
         <p>课程介绍</p>
+        <p class="cxy_p" v-html="list1.course_details"></p>
       </div>
 
       <!-- 课程大纲 -->
       <div class="tad-tu2">
         <p>课程大纲</p>
         <div>
+        <p class="cxy_p1" v-html="list1.course_details"></p>
+        </div>
+        <!-- <div>
           <div class="k00">
             <div class="k0">
               <div class="k1"></div>
@@ -70,8 +74,8 @@
             <span>03月21日</span>
             <span>18:00-19:00</span>
           </p>
-        </div>
-
+        </div> -->
+<!-- 
         <div>
           <div class="k00">
             <div class="k0">
@@ -85,7 +89,7 @@
             <span>03月21日</span>
             <span>18:00-19:00</span>
           </p>
-        </div>
+        </div> -->
       </div>
       <!-- 课程评论 -->
 
@@ -108,16 +112,13 @@
                   </span>
                   <span>{{Number(item.created_at) | timetesev}}</span>
                 </div>
-                <!-- <p>风格的</p> -->
                 <div>
-                  <span>{{item.content}}</span>
+                  <span class="cxy_span1">{{item.content}}</span>
                 </div>
               </div>
             </div>
           </li>
-        </ul>
-
-     
+        </ul> 
       </div>
     </div>
 
@@ -126,6 +127,7 @@
 </template>
 
 <script>
+import { gets } from '../util/api'
 export default {
   data() {
     return {
@@ -138,8 +140,8 @@ export default {
       id:this.$route.query.id,
 
       // 基本数据
-      list:[],
-      list1:[],
+      list:{},
+      list1:{},
       list3:[]
     };
   },
@@ -157,27 +159,25 @@ export default {
   methods: {
     // 获取数据
     async fun(){
-      let { data } = await this.$http.get(`/api/app/courseInfo/basis_id=${this.$route.query.id}`)
-      this.list = data.data
-      console.log(this.list)
-
-
+      let { data } = await gets(`courseInfo/basis_id=${this.$route.query.id}`)
+      this.list = data.data.teachers[0]
+      // console.log(data.data)
     },
     // 课程
     async fun1(){
-      let { data } = await this.$http.get(`/api/app/courseInfo/basis_id=${this.$route.query.id}`)
+      let { data } = await this.$http.get(`courseInfo/basis_id=${this.$route.query.id}`)
       this.list1 = data.data.info
-      console.log(this.list1)
+      // console.log(this.list1)
     },
     // 大纲
     async fun2(){
-      let { data } = await this.$http.post('/api/app/courseComment',{
+      let { data } = await this.$http.post('courseComment',{
           page:1,
           limit:10,
           id:this.id
       })
       this.list3 = data.data.list
-      console.log(data)
+      // console.log(data)
       console.log(this.list3)
     },
 
@@ -304,12 +304,12 @@ export default {
   padding-top: 0.3rem;
   margin: 0;
   height: 0.6rem;
-  line-height: 0.6rem;
+  // line-height: 0.6rem;
 }
 .tad-p2 {
   color: #eb6100;
   font-size: 0.35rem;
-  margin: 0;
+  margin-top: 0.2rem;
   height: 0.6rem;
   line-height: 0.6rem;
 }
@@ -339,14 +339,18 @@ export default {
 }
 .tad-tu1 {
   width: 7.1rem;
-  height: 1.1rem;
+  // height: 1.1rem;
   background-color: #fff;
   padding: 0.1rem 0.2rem;
   margin-top: 0.3rem;
+  .cxy_p{
+    font-size: 0.2rem;
+    padding-left: 0.2rem;
+  }
 }
 .tad-tu1 p {
   width: 7.1rem;
-  height: 0.5rem;
+  // height: 0.5rem;
   margin: 0;
   margin-top: 0.2rem;
   font-size: 0.3rem;
@@ -385,6 +389,15 @@ export default {
   margin-top: 0.3rem;
   background: #fff;
   padding: 0.1rem 0.2rem;
+  .cxy_p1{
+    color: #595959;
+    font-size: 0.24rem;
+    padding-left: 0.2rem;
+  }
+  .cxy_span1{
+    font-size: 0.18rem;
+    color: #999;
+  }
   ul {
     width: 7.07rem;
     li {
@@ -402,7 +415,7 @@ export default {
         div {
           margin-left: 0.2rem;
           width: 6.17rem;
-          height: 0.86rem;
+          // height: 0.86rem;
           display: flex;
           flex-wrap: wrap;
           // flex-direction: row-reverse;
@@ -411,7 +424,7 @@ export default {
             display: flex;
             justify-content: space-between;
             width: 6.17rem;
-            height: 0.3rem;
+            // height: 0.3rem;
           }
         }
       }
@@ -459,10 +472,11 @@ export default {
 }
 .tad-tu2 p {
   width: 7.1rem;
-  height: 0.5rem;
+  // height: 0.5rem;
   margin: 0;
   margin-top: 0.2rem;
   font-size: 0.3rem;
+
 }
 //  <!-- 课程评论 -->
 </style>

@@ -1,13 +1,21 @@
 import axios from 'axios'
 import store from '../store'
 // axios.defaults.withCredentials = true;//配置为true
+import { Guid } from './guid'
+
+let deviceid = null
+let id = localStorage.getItem('deviceid')
+
+if(id){
+    deviceid = id
+}else{
+    deviceid = Guid.NewGuid().ToString("D")
+}
 
 // export default instance;
 // instance 新创建的一个axios 赋值给instance
 const instance = axios.create({
-    // baseURL:'http://127.0.0.1:8888/api/private/v1/',
-    baseURL:'http://120.53.31.103:84',
-    // baseURL:'https://wap.365msmk.com',
+    baseURL:'https://www.365msmk.com/api/app/',
     timeout: "7000"
 })
 
@@ -18,11 +26,12 @@ const instance = axios.create({
 instance.interceptors.request.use((config)=>{
     const token = localStorage.getItem('token')
     if (token ) { // 判断是否存在token，如果存在的话，则每个http header都加上token
-        config.headers.authorization = token  //请求头加上token
+        config.headers.authorization = `Bearer ${token}`  //请求头加上token
     }
     store.state.isshow=true
 
-   //  store.state.islod=true
+   config.headers.deviceid = deviceid
+   config.headers.devicetype = 'H5'
     return config
 })
 

@@ -35,7 +35,7 @@
           <template #button>
             <span @click="zqd_fa" v-show="zqd_show">获取验证码</span>
 
-            <p @click="zqd_fa" id="qq" v-show="!zqd_show">获取验证码 (<van-count-down :time="time" format="ss" id="qq" />)</p>
+            <p @click="zqd_fa" id="qq" v-show="!zqd_show">获取验证码 (<van-count-down @finish="zqd_show=true" :time="time" format="ss" id="qq" />)</p>
           </template>
         </van-field>
       </div>
@@ -112,32 +112,28 @@ export default {
         return false;
       }
       this.zqd_show = false;
-      let { data } = await posts('/api/app/smsCode', {
+      let { data } = await this.$http.post('http://120.53.31.103:84/api/app/smsCode', {
         mobile: this.zqd_yan.mobile,
         sms_type: 'login',
       });
       console.log(data);
-      // 验证码登录  判断是第几次
-      if(data.data.is_new==2){
-        this.$router.push('/person');
-      }else{
-        this.$router.push('/set-pass')
-      }
+     
     },
     // 短信登
     async zqd_duanxindeng() {
       // this.$router.push('/person')
       let { data } = await this.$http.post(
         "http://120.53.31.103:84/api/app/login",
-        this.zqd_yan
+         this.zqd_yan
       );
       if(data.msg=='操作成功'){
         localStorage.setItem("token", data.data.remember_token);
       }
-      if(data.data.is_new==1){
-      this.$router.push('/new')
+      // 验证码登录  判断是第几次
+      if(data.data.is_new==2){
+        this.$router.push('/person');
       }else{
-      this.$router.push('/info')
+        this.$router.push('/set-pass')
       }
 
       // console.log(data);

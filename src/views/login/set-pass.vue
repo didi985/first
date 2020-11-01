@@ -7,7 +7,7 @@
       </template>
     </van-nav-bar>
     <!-- input  -->
-    <div class="zqd_div" :class="input1 ? 'zqd_active' : ''">
+    <!-- <div class="zqd_div" :class="input1 ? 'zqd_active' : ''">
       <van-field center clearable label="" placeholder="请输入手机号" @focus="input1 = true" @blur="input1 = false">
         <template #button>
           <span @click="zqd_fa" v-show="zqd_show">获取验证码</span>
@@ -15,7 +15,7 @@
           <p @click="zqd_fa" id="qq" v-show="!zqd_show"><van-count-down :time="60*1000" format="获取验证码 (ss)" /></p>
         </template>
       </van-field>
-    </div>
+    </div> -->
     <div class="zqd_div" :class="a ? 'zqd_active' : ''">
       <input type="text" placeholder="请设置登录密码" @focus="a = true" @blur="a = false" />
     </div>
@@ -42,27 +42,6 @@ export default {
   methods: {
     zqd_que() {
       this.$router.push('/set-message');
-    },
-    //  发送验证码
-    async zqd_fa() {
-      // console.log('123');
-      let res = /^1[3|4|5|7|8][0-9]{9}$/;
-      if (!res.test(this.zqd_yan.mobile)) {
-        Toast('手机号格式不正确');
-        return false;
-      }
-      this.zqd_show = false;
-      let { data } = await posts('/api/app/smsCode', {
-        mobile: this.zqd_yan.mobile,
-        sms_type: 'login',
-      });
-      console.log(data);
-      // 验证码登录  判断是第几次
-      if(data.data.is_new==2){
-        this.$router.push('/person');
-      }else{
-        this.$router.push('/set-pass')
-      }
     },
   },
 };

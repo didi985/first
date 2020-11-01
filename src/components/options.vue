@@ -14,7 +14,7 @@
     </van-nav-bar>
 
      <!-- 底部按钮 -->
-    <van-button type="primary" id="zqd">退出登录</van-button>
+    <van-button type="primary" id="zqd" @click="tuichu">退出登录</van-button>
   </div>
 </template>
 
@@ -31,6 +31,10 @@ export default {
   methods: {
     zqd_go() {
       this.$router.go(-1);
+    },
+    tuichu(){
+      localStorage.removeItem('token')
+      this.$router.push('/index')
     },
   },
 };
